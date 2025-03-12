@@ -6,7 +6,7 @@
 - Linked List Class
 - Renderer
 
-  **Team Members:**
+**Team Members:**
 
   - Carson Gray
   - 
