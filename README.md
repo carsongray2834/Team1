@@ -1,6 +1,6 @@
 # Team1
 
-  **To-Do**
+**To-Do**
 
 - Particle Class
 - Linked List Class
@@ -9,4 +9,3 @@
 **Team Members:**
 
   - Carson Gray
-  - 
