@@ -5,6 +5,7 @@
 - Particle Class
 - Linked List Class
 - Renderer
+- Makefile
 
 **Team Members:**
 
