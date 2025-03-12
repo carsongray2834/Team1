@@ -10,3 +10,6 @@
 **Team Members:**
 
   - Carson Gray
+  - Jackson Douglass
+  - Lucas Riley
+  - Gurshan Singh
