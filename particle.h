@@ -1,5 +1,6 @@
 #ifndef PART_H
 #define PART_H
+#include <iostream>
 
 
 //we can probably move the Data struct into this file, since this class will probably take it instead of Node. 
@@ -15,7 +16,7 @@ struct Color {
 
 	Color(int new_r, int new_g, int new_b) : r(new_r), g(new_g), b(new_b) {
 		//r, g, and b must be greater than or equal to 0 and less than 255
-	}
+	}	
 };
 class Particle {
 	//Data data; holding off on this for now
