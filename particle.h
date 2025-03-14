@@ -13,7 +13,7 @@ struct Color {
 	int g = 0;
 	int b = 0;
 
-	Color(int new_r, int new_g, int new_g) : r(new_r), g(new_g), b(new_b) {
+	Color(int new_r, int new_g, int new_b) : r(new_r), g(new_g), b(new_b) {
 		//r, g, and b must be greater than or equal to 0 and less than 255
 	}
 };
