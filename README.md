@@ -4,6 +4,7 @@
 
 - Particle Class
 - Linked List Class
+- Node Class
 - Renderer
 - Makefile
 
