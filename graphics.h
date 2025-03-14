@@ -1,6 +1,8 @@
 #ifndef GRAPH_H
 #define GRAPH_H
 
+#include "node.h"
+
 class ParticleGraphics {
 	Color color(100,10,150);
 	public:
