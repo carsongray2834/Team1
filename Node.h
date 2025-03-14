@@ -5,20 +5,6 @@
 #include <iostream>
 #include "particle.h" //Color and die()
 
-void die() {
-	std::cout << "BAD INPUT SOMEWHERE!" << std::endl;
-	exit(1);
-}
-
-struct Color {
-	int r = 0;
-	int g = 0;
-	int b = 0;
-
-	Color(int new_r, int new_g, int new_g) : r(new_r), g(new_g), b(new_b) {
-		//r, g, and b must be greater than or equal to 0 and less than 255
-	}
-};
 
 //NOTE: For now, I'm only putting the physics variables in Data. Color, shape, and lifespan can probably stay as member variables in the Node class. 
 struct Data {
