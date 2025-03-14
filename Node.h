@@ -3,6 +3,7 @@
 
 //Edited by Jackson Douglass
 #include <iostream>
+#include "particle.h" //Color and die()
 
 void die() {
 	std::cout << "BAD INPUT SOMEWHERE!" << std::endl;
