@@ -29,7 +29,7 @@ class Particle {
 	enum Type {STREAMER, BALLISTIC, FIREWORK};
 	Type type = STREAMER;
 	int lifeFramesLeft;
-	Color c(255,255,255);//feel free to change the default color
+	Color c{255,255,255};//feel free to change the default color
 public:
 	int get_x() {};
 	int get_y() {};
@@ -44,5 +44,5 @@ public:
 	int get_life() {};
 	void set_life() {};
 	void move() {};
-}
+};
 #endif
