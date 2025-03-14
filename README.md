@@ -10,9 +10,11 @@
 
 **Team Members:** 
 
+I am doing the particle class
   - Carson Gray
     
       My idea is particles swirling together into a central point then either getting deleted or ejected.
+
       I am doing the linked list class
   - Jackson Douglass
 
