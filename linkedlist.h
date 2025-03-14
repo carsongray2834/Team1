@@ -12,11 +12,13 @@ class List {
 	Node* head;
 	Node* tail;
 	Node* middle;
+	int size = 0;
 
 	public: 
 	List() {} //Node will do it for us 
 	~List();
 	//copy constructor here?
+
 
 
 };
