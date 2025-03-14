@@ -8,7 +8,7 @@
 - Renderer
 - Makefile
 
-**Team Members:** (List Particle Effect Ideas Below)
+**Team Members:** 
 
   - Carson Gray
     
