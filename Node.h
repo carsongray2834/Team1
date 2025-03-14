@@ -39,7 +39,7 @@ class Node {
 	private:
 	Node* next;
 	Node* prev;
-	Color c(100, 100, 50);
+	Color c{100, 100, 50};
 	Data data;
 	char shape;//maybe set in Node constructor?
 	int lifeLeft;//stores the remaining frames of life for this object
@@ -69,7 +69,7 @@ Node* Node::get_next() const {
 	Node* n = new Node(); 
 	return n;
 }
-void Node::set_next {
+void Node::set_next() {
 
 }
 

@@ -31,18 +31,18 @@ class Particle {
 	int lifeFramesLeft;
 	Color c{255,255,255};//feel free to change the default color
 public:
-	int get_x() {};
-	int get_y() {};
-	void set_x(int nX) {};
-	void set_y(int nY) {};
-	double get_dx() {};
-	double get_dy() {};
-	void set_dx(double new_dx) {};
-	void set_dy(double new_dy) {};
-	Type get_type() {};
-	void set_type(Type nType) {};
-	int get_life() {};
-	void set_life() {};
-	void move() {};
+	int get_x() {return 1;}
+	int get_y() {return 1;}
+	void set_x(int nX) {}
+	void set_y(int nY) {}
+	double get_dx() {return 3.14;}
+	double get_dy() {return 3.14;}
+	void set_dx(double new_dx) {}
+	void set_dy(double new_dy) {}
+	Type get_type() {return STREAMER;}
+	void set_type(Type nType) {}
+	int get_life() {return 100;}
+	void set_life() {}
+	void move() {}
 };
 #endif
