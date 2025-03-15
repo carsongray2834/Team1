@@ -15,17 +15,17 @@ struct Color {
 	int b = 0;
 
 	Color(int new_r, int new_g, int new_b) : r(new_r), g(new_g), b(new_b) {
+		if(new_r < 0 || new_g < 0 || new_b < 0) die();
+		else if(new_r > 255 || new_b > 255 || new_g > 255) die();
 		//r, g, and b must be greater than or equal to 0 and less than 255
 	}	
 };
 class Particle {
-	//Data data; holding off on this for now
 	int x;
 	int y;
 	double dx;
 	double dy;
-	double ax;
-	double ay;
+	//acceleration not needed
 	enum Type {STREAMER, BALLISTIC, FIREWORK};
 	Type type = STREAMER;
 	int lifeFramesLeft;
