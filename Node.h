@@ -8,12 +8,17 @@
 //NOTE: should we rewrite this to make Node reference a particle object? Right now, it is storing all the info itself, but we have a particle.h file to do that. 
 class Node {//					|
 	private://					|
-	Node* next;//				|
-	Node* prev;// 				|
+	//							|
+	// 							|
 	//here is your particle < --i
 	Particle p;
 
+	Node* next;
+	Node* prev;
+
 	public:
+
+	
 	
 	Node* get_next() const;
 	void set_next(); //parameters needed
@@ -21,7 +26,7 @@ class Node {//					|
 	Node* get_prev() const;
 	void set_prev(); //parameters needed
 
-	void set_data(Data& d);//pass a Data struct object here and use the assignment = operator to set the internal .data member?
+	void set_particle(Particle;//pass a Data struct object here and use the assignment = operator to set the internal .data member?
 };
 
 Node* Node::get_next() const {
@@ -39,6 +44,7 @@ Node* Node::get_prev() const {
 void Node::set_prev() {
 
 }
+
 
 #endif
 
