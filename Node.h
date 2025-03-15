@@ -15,34 +15,41 @@ class Node {//					|
 
 	Node* next;
 	Node* prev;
-
 	public:
+	Node(Particle& new_p, Node* new_next = nullptr, Node* new_prev = nullptr) : p(new_p), next(new_next), prev(new_prev) {}
 
 	
 	
 	Node* get_next() const;
-	void set_next(); //parameters needed
+	void set_next(Node* new_next); //parameters needed
 
 	Node* get_prev() const;
-	void set_prev(); //parameters needed
+	void set_prev(Node* new_prev); //parameters needed
 
-	void set_particle(Particle;//pass a Data struct object here and use the assignment = operator to set the internal .data member?
+	void set_particle(const Particle& new_p);
+	
+
+	//pass a Data struct object here and use the assignment = operator to set the internal .data member?
 };
+
+//Constructor is above
 
 Node* Node::get_next() const {
 	Node* n = new Node(); 
 	return n;
 }
-void Node::set_next() {
+void Node::set_next(Node* new_next) {
 
 }
 
 Node* Node::get_prev() const {
-	Node* n = new Node;
-	return n;
+	return next;
 }
-void Node::set_prev() {
+void Node::set_prev(Node* new_prev) {
+}
 
+void Node::set_particle(const Particle& p) {
+	p = new_p;
 }
 
 
