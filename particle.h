@@ -2,6 +2,10 @@
 #define PART_H
 #include <iostream>
 
+const double g = 9.80;
+//GRAVITY DONT CHANGE
+
+
 
 //we can probably move the Data struct into this file, since this class will probably take it instead of Node. 
 void die() {
