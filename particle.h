@@ -36,6 +36,8 @@ class Particle {
 	int lifeFramesLeft;
 	Color c{255,255,255};//feel free to change the default color
 public:
+	//I am going to move all of the member functions to particle.cc
+	Particle (Color newC = {255, 255, 255}, Type newType = STREAMER, int newX = 0, int newY = 0, double newDx = 0, double newDy = 0) {};
 	int get_x() {return 1;}
 	int get_y() {return 1;}
 	void set_x(int nX) {}
