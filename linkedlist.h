@@ -21,7 +21,7 @@ class List {
 
 	int get_size const; 
 
-	void insert_at_begin(const Particle& p);
+	void insert_at_end(const Particle& p);
 	void delete_back();
 
 
