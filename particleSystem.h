@@ -2,12 +2,11 @@
 #define PARTSYS_H
 #include <list>
 #include "particle.h"
-using namespace std;
 
 class ParticleSystem {
 	int rows = 0;
 	int columns = 0;
-	list<Particle> particles; //placeholder list
+	std::list<Particle> particles; //placeholder list
 public:
 	ParticleSystem(int nRows = 0, int nColumns = 0) {
 		if (nRows < 0) nRows = 0;
