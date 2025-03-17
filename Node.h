@@ -19,7 +19,7 @@ class Node {//					|
 	Node(Particle& new_p, Node* new_next = nullptr, Node* new_prev = nullptr) : p(new_p), next(new_next), prev(new_prev) {}
 
 	
-	
+	Particle& get_particle();	
 	Node* get_next() const;
 	void set_next(Node* new_next); //parameters needed
 
@@ -48,9 +48,12 @@ void Node::set_prev(Node* new_prev) {
 	prev = new_prev;
 }
 
-void Node::set_particle(const Particle& p) {
+void Node::set_particle(const Particle& new_p) {
 	p = new_p;
 }
+
+
+Particle& Node::get_particle() {return p;}
 
 
 #endif

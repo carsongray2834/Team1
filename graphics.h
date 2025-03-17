@@ -1,10 +1,12 @@
 #ifndef GRAPH_H
 #define GRAPH_H
 
-#include "node.h"
+#include "Node.h"
+#include "particle.h"
+#include <vector>
 
 class ParticleGraphics {
-	Color color(100,10,150);
+	Color color{100,10,150};
 	public:
 	ParticleGraphics(Color c) {
 		color = c;
@@ -29,4 +31,6 @@ class ParticleGraphics {
 
 	//takes two endpoints
 	void drawLine(int x1, int y1, int x2, int y2) {}
-}
+};
+
+#endif
