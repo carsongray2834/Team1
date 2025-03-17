@@ -1,18 +1,21 @@
 #ifndef PARTSYS_H
 #define PARTSYS_H
+
 #include <list>
 #include "particle.h"
-using namespace std;
 
 //<<<<<<< HEAD
 //class particleSystem {
 
 	
-//=======
+//=======:
+
+//
+
 class ParticleSystem {
 	int rows = 0;
 	int columns = 0;
-	list<Particle> particles; //placeholder list
+	std::list<Particle> particles; //placeholder list
 public:
 	ParticleSystem(int nRows = 0, int nColumns = 0) {
 		if (nRows < 0) nRows = 0;
@@ -28,5 +31,6 @@ public:
 	void drawParticles() {}
 //>>>>>>> 1db294e4ef3ac28ddb9d3369a2e60c3b6909e52b
 };
+
 
 #endif

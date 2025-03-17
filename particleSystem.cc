@@ -2,6 +2,9 @@
 #include "linkedlist.h"
 #include "particle.h"
 
+//Script Name: particleSystems.cc
+
+using namespace std; //We can use namespace std because this is a .cc file
 
 int main(){
 
