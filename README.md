@@ -24,6 +24,8 @@ I am doing the graphics class.
   - Lucas Riley
     
     My idea is a light swinging and showering down sparks every so often.
+
+Particle system class
   - Gurshan Singh
 
     My idea is to make a little faucet that drips water on mouse click and it will explode after a few clicks.  
