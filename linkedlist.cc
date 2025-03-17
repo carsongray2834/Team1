@@ -9,9 +9,9 @@ int List::get_size() const {
 }
 
 void List::insert_at_begin(const Particle& p) {
-	Node* ins(p, nullptr, nullptr);
-	delete ins;
-	return;
+	Node* ins(p, nullptr, head);
+	head->set_prev(ins);
+	head = ins;
 }
 
 void List::delete_back() {
