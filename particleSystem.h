@@ -4,7 +4,7 @@
 #include <list>
 #include "particle.h"
 
-//<<<<<<< HEAD
+//<<<<<< HEAD
 //class particleSystem {
 
 	

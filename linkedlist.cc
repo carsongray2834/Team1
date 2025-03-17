@@ -4,7 +4,7 @@ List::~List() {
 	
 }
 
-int List::get_size const {
+int List::get_size() const {
 	return size;
 }
 
