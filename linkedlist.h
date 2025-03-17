@@ -19,9 +19,8 @@ class List {
 	~List();
 	//copy constructor here?
 
-	int get_size const { 
-		return size; 
-	}
+	int get_size const; 
+
 	void insert_at_begin(const Particle& p);
 	void delete_back();
 
