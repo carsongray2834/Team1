@@ -4,8 +4,8 @@ List::~List() {
 	Node* temp = head;
 	while(temp != null) {
 		Node* current = temp;
-		delete current;
 		temp = temp->get_next();
+		delete current;
 	}
 	delete temp;
 }
