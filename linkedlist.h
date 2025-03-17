@@ -22,6 +22,9 @@ class List {
 	int get_size const { 
 		return size; 
 	}
+	void insert_at_begin(const Particle& p);
+	void delete_back();
+
 
 
 
