@@ -19,6 +19,10 @@ class List {
 	~List();
 	//copy constructor here?
 
+	int get_size const { 
+		return size; 
+	}
+
 
 
 };
