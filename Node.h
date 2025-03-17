@@ -35,17 +35,17 @@ class Node {//					|
 //Constructor is above
 
 Node* Node::get_next() const {
-	Node* n = new Node(); 
-	return n;
+	return next;
 }
 void Node::set_next(Node* new_next) {
-
+	next = new_next;
 }
 
 Node* Node::get_prev() const {
-	return next;
+	return prev;
 }
 void Node::set_prev(Node* new_prev) {
+	prev = new_prev;
 }
 
 void Node::set_particle(const Particle& p) {
