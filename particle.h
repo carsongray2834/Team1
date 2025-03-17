@@ -29,7 +29,6 @@ struct Color {
 	
 };
 class Particle {
-	//TODO particle needs constructor
 	int x;
 	int y;
 	double dx;

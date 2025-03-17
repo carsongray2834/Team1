@@ -2,6 +2,7 @@
 #define PARTSYS_H
 
 class particleSystem {
+
 	
 };
 
