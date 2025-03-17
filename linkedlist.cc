@@ -1,7 +1,13 @@
 #include "linkedlist.h"
 
 List::~List() {
-	
+	Node* temp = head;
+	while(temp != null) {
+		Node* current = temp;
+		delete current;
+		temp = temp->get_next();
+	}
+	delete temp;
 }
 
 int List::get_size() const {
@@ -19,8 +25,9 @@ void List::insert_at_end(const Particle& p) {
 		tail->set_next(ins);
 		tail = ins;
 	}
+	size++;
 }
 
-void List::delete_back() {
+void List::delete_current() {
 	return; 
 }
