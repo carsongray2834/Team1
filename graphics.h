@@ -17,12 +17,16 @@ class ParticleGraphics {
 	}
 	//takes point coords
 	void drawPoint(int x, int y) {}
+
 	//takes upper left point, width, and height
 	void drawRect(int x, int y, int w, int h) {}
+
 	//takes center point, width, and height
 	void drawOval(int x, int y, int w, int h) {}
+
 	//takes a vector of coords ({x1,y1,x2,y2,x3,y3,...})
 	void drawPolygon(vector<int> vertices) {}
+
 	//takes two endpoints
 	void drawLine(int x1, int y1, int x2, int y2) {}
 }
