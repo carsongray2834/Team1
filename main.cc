@@ -62,6 +62,7 @@ void particleSystemTest() {
 	ParticleSystem c(-10, -10);
 	assert(c.get_rows() == 0);
 	assert(c.get_columns() == 0);
+
 	cout << "PARTICLE STYSTEM TESTS PASSED" << endl;
 }
 
