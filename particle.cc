@@ -3,19 +3,6 @@
 #include <cstdlib>
 #include <ctime>
 
-
-void die() {
-	std::cout << "BAD INPUT SOMEWHERE!" << std::endl;
-	exit(0);
-}
-
-
-Color::Color(int new_r, int new_g, int new_b) : r(new_r), g(new_g), b(new_b) {
-	if(new_r < 0 || new_g < 0 || new_b < 0) die();
-	else if(new_r > 255 || new_b > 255 || new_g > 255) die();
-	//r, g, and b must be greater than or equal to 0 and less than 255
-}
-
 Particle::Particle (Color newC, Type newType, int newX, int newY, double newDx, double newDy, int newLife){
 	c = newC;
 	type = newType;

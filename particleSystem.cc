@@ -4,15 +4,18 @@
 
 //File Name: particleSystem.cc
 
+
+//NOTE this code was giving errors
+/*
 ParticleSystem mainParticleSystem;
 
-void PartSystems::loadParticles(Node* firstParticle){
+void particleSystem::loadParticles(Node* firstParticle){
    for(Node* currentParticle = firstParticle; currentParticle != nullptr; currentParticle = currentParticle -> next){
 	mainParticleSystem->add(currentParticle); //Add each particle to the particles list
    }
 }
 
-void PartSystems::drawParticles(){ 
+void particleSystem::drawParticles(){ 
 	list listOfParticles = mainParticlesSystem->returnParticlesList();
 
    for(int i = 0; i < mainParticlesSystem->numParticles();i++)){
@@ -29,5 +32,5 @@ void PartSystems::moveParticles(Node* firstParticle,double newdx, double, newdy)
 
 }
 
-
+*/
 

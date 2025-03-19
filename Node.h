@@ -19,14 +19,17 @@ class Node {//					|
 	Node(Particle& new_p, Node* new_next = nullptr, Node* new_prev = nullptr) : p(new_p), next(new_next), prev(new_prev) {}
 
 	
-	Particle& get_particle();	
-	Node* get_next() const;
-	void set_next(Node* new_next); //parameters needed
+	Particle& get_particle() {
+		Particle p(Color{0, 0, 0}, STREAMER, 0, 0, 0);
+		return p;
+	}
+	Node* get_next() const {return nullptr;};
+	void set_next(Node* new_next) {}; //parameters needed
 
-	Node* get_prev() const;
-	void set_prev(Node* new_prev); //parameters needed
+	Node* get_prev() const {return nullptr;};
+	void set_prev(Node* new_prev) {}; //parameters needed
 
-	void set_particle(const Particle& new_p);
+	void set_particle(const Particle& new_p) {};
 	
 
 	//pass a Data struct object here and use the assignment = operator to set the internal .data member?
@@ -34,6 +37,8 @@ class Node {//					|
 
 //Constructor is above
 
+//I got a multiple definitions error for all of these function, maybe move them into the class definition
+/*
 Node* Node::get_next() const {
 	return next;
 }
@@ -54,7 +59,7 @@ void Node::set_particle(const Particle& new_p) {
 
 
 Particle& Node::get_particle() {return p;}
-
+*/
 
 #endif
 

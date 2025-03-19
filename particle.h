@@ -1,16 +1,8 @@
 #ifndef PART_H
 #define PART_H
-#include <iostream>
-#include "/public/colors.h"
+#include "graphics.h"
 
 enum Type {STREAMER, BALLISTIC, FIREWORK};
-
-struct Color {
-	int r = 0;
-	int g = 0;
-	int b = 0;
-	Color(int new_r, int new_g, int new_b);
-};
 
 class Particle {
 	int x; //columns

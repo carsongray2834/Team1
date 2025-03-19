@@ -2,8 +2,14 @@
 #define GRAPH_H
 
 //#include "Node.h"
-#include "particle.h"
 #include <vector>
+
+struct Color {
+	int r = 0;
+	int g = 0;
+	int b = 0;
+	Color(int new_r, int new_g, int new_b);
+};
 
 class ParticleGraphics {
 	Color color{100,10,150};

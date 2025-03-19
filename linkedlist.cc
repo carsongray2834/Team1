@@ -2,7 +2,7 @@
 
 List::~List() {
 	Node* temp = head;
-	while(temp != null) {
+	while(temp != nullptr) {
 		Node* current = temp;
 		temp = temp->get_next();
 		delete current;
@@ -14,8 +14,8 @@ int List::get_size() const {
 	return size;
 }
 
-void List::insert_at_end(const Particle& p) {
-	Node* ins(p, nullptr, nullptr); //p, next, prev
+void List::insert_at_end(Particle& p) {
+	Node* ins = (p, nullptr, nullptr); //p, next, prev
 	if(!tail) {
 		head = ins;
 		tail = ins;
