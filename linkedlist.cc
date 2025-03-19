@@ -28,6 +28,29 @@ void List::insert_at_end(Particle& p) {
 	size++;
 }
 
-void List::delete_current() {
-	return; 
-}
+void List::delete_current(Node* current) {
+      if(size == 0) return;
+      if (size == 1) {
+          delete current;
+      }
+  
+      if(head == current) {
+          head = head->get_next();
+          delete head->get_prev();
+          head->set_prev(nullptr);
+          size--;
+      }
+      if(tail == current) {
+          tail = tail->get_prev();
+          delete tail->get_next();
+          tail->set_next(nullptr);
+      }
+      else {
+          Node* temp = current;
+          temp->get_prev->set_next(temp->get_next());
+          temp->get_next->set_prev(temp->get_prev());
+          delete temp;
+      }
+  
+ }
+
