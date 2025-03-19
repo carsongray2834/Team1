@@ -47,8 +47,8 @@ void List::delete_current(Node* current) {
       }
       else {
           Node* temp = current;
-          temp->get_prev->set_next(temp->get_next());
-          temp->get_next->set_prev(temp->get_prev());
+          temp->get_prev()->set_next(temp->get_next());
+          temp->get_next()->set_prev(temp->get_prev());
           delete temp;
       }
   
