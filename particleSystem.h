@@ -10,6 +10,7 @@ class ParticleSystem {
 	int rows = 0;
 	int columns = 0;
 	List particles;
+	ParticleGraphics graphics(Color{0, 0, 0});
 public:
 	ParticleSystem(int nRows = 0, int nColumns = 0) {
 		if (nRows < 0) nRows = 0;
@@ -20,9 +21,21 @@ public:
 	int get_rows() {return rows;}
 	int get_columns() {return columns;}
 	int numParticles() {return particles.get_size();}
-	void moveParticles() {}
+	void moveAndDraw() {
+		Node* temp = particles.get_head();
+		for (int i = 0; i < particles.get_size(); i++) {
+			temp->get_particle().move();
+			draw(temp->get_particle());
+			if ((temp->get_particle().get_type() == STREAMER) && (temp->get_particle().get_life() = 0) firework(temp->get_particle().get_x(), temp->get_particle.get_y()); 
+
+	   		clearscreen();
+		}
+	}
+	void draw(Particle p) {
+		if (p.get_life >=) graphics.drawPoint(p.get_y(), p.get_x());
+	}
 	void add(Particle p) {particles.insert_at_end(p);}
-	void drawParticles() {}
+	void firework(int x, int y);
 	//This method was giving errors, and I don't think its necessary
 	//std::list returnParticlesList(){return particles;}
 

@@ -19,7 +19,7 @@ class List {
 	//copy constructor here?
 
 	int get_size() const; 
-
+	Node* get_head() const {return head;}
 	void insert_at_end(Particle& p);
 	void delete_current();
 

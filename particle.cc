@@ -52,12 +52,8 @@ void Particle::move() {
 	x += std::round(dx * dt);
 	y += std::round(dy * dt);
 	life--;
-	if ((type == FIREWORK) && (life == 0)) {
-		for (int i = 0; i < 50; i++) {
-			srand(time(0));
-			Particle p(Color{(rand() % 256), (rand() % 256), (rand() % 256)}, STREAMER, x, y, ((rand() % 4) - 3), ((rand() % 4) - 3), ((rand() % 9) + 2));
-		}
-	}
+	//had to implement fireworks in particleSystem since
+	//i would need to add new particles
 }
 //if life < 0, then the particles should stop being drawn, I don't think there's a delete function yet
-void Particle::draw() {}
+

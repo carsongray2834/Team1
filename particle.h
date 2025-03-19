@@ -37,6 +37,5 @@ public:
 	double get_ax();
 	double get_ay();
 	void move();
-	void draw();
 };
 #endif

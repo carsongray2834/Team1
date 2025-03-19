@@ -5,6 +5,16 @@
 //File Name: particleSystem.cc
 
 
+
+void ParticleSystem::firework(int x, int y) {
+	srand(time(0));
+	for (int i = 0; i < 50; i++) {
+		Particle p(Color{(rand() % 256), (rand() % 256), (rand() % 256)}, STREAMER, x, y, ((rand() % 6) - 3), ((rand() % 6) - 3), ((rand() % 8) + 2));
+	particles.add(p);
+	}
+}
+
+
 //NOTE this code was giving errors
 /*
 ParticleSystem mainParticleSystem;

@@ -1,6 +1,7 @@
 #ifndef GRAPH_H
 #define GRAPH_H
 
+#include "/public/colors.h"
 #include <vector>
 
 struct Color {
