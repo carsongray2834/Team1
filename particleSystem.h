@@ -18,6 +18,7 @@ public:
 		if (nColumns < 0) nColumns = 0;
 		columns = nColumns;
 	}
+	void loadParticles(Node* firstParticle);
 	int get_rows() {return rows;}
 	int get_columns() {return columns;}
 	int numParticles() {return particles.get_size();}
@@ -38,7 +39,7 @@ public:
 		  graphics.drawPoint(pa.get_y(), pa.get_x());
 		}
 	}
-
+	void drawParticles();
 	void add(Particle p) {particles.insert_at_end(p);}
 	bool firework(int x, int y);
 	//This method was giving errors, and I don't think its necessary

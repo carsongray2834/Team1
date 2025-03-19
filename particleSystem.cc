@@ -21,15 +21,15 @@ bool ParticleSystem::firework(int x, int y) {
 ParticleSystem mainParticleSystem;
 
 void ParticleSystem::loadParticles(Node* firstParticle){
-   for(Node* currentParticle = firstParticle; currentParticle != nullptr; currentParticle = currentParticle -> next){
-	mainParticleSystem->add(currentParticle); //Add each particle to the particles list
+   for(Node* currentParticle = firstParticle; currentParticle != nullptr; currentParticle = currentParticle -> get_next()){
+	mainParticleSystem.add(currentParticle->get_particle()); //Add each particle to the particles list
    }
 }
 
 void ParticleSystem::drawParticles(){ 
-	list listOfParticles = mainParticlesSystem->returnParticlesList();
+	List listOfParticles = mainParticleSystem.returnParticlesList();
 
-   for(int i = 0; i < mainParticlesSystem->numParticles();i++){
+   for(int i = 0; i < mainParticleSystem.numParticles();i++){
 	   Particle holder = std::advance(listOfParticles,i);
 	   holder->draw(); //calling draw() method as defined in particle.h
    }
