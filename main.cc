@@ -3,7 +3,7 @@
 #include "particleSystem.h"
 #include "Node.h"
 #include "graphics.h"
-#include "particle.h"
+//#include "particle.h"
 using namespace std;
 
 void particleTest();
@@ -72,6 +72,12 @@ void graphicsTest() {
 	assert(p.getColor().r == 0);
 	assert(p.getColor().b == 0);
 	assert(p.getColor().g == 0);
+	
+	clearscreen();//always clear the screen before using this class. It gets cursed. 
+	p.setColor(Color{255,0,0});
+	p.drawPoint(10,10);
+	resetcolor();
+
 	cout << "GRAPHICS TESTS PASSED" << endl;
 }
 
