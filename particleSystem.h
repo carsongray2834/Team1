@@ -33,11 +33,12 @@ public:
 	   		clearscreen();
 		}
 	}
-	void draw(Particle p) {
-		if (p.get_life() >= p.life){ 
-		  graphics.drawPoint(p.get_y(), p.get_x())
+	void draw(Particle pa) {
+		if (pa.get_life() > 0){ 
+		  graphics.drawPoint(pa.get_y(), pa.get_x());
 		}
 	}
+
 	void add(Particle p) {particles.insert_at_end(p);}
 	bool firework(int x, int y);
 	//This method was giving errors, and I don't think its necessary
