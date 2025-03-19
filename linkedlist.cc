@@ -15,7 +15,7 @@ int List::get_size() const {
 }
 
 void List::insert_at_end(Particle& p) {
-	Node* ins(p, nullptr, nullptr); //p, next, prev
+	Node* ins = new Node(p, nullptr, nullptr); //p, next, prev
 	if(!tail) {
 		head = ins;
 		tail = ins;

@@ -24,14 +24,26 @@ class Node {//					|
 		return p;
 	} */ 
 	//Definitons have to be in order, this could have caused an error
-	Node* get_next() const;
-	void set_next(Node* new_next); 
+	Node* get_next() const {
+		return next;
+	}
+	void set_next(Node* new_next) {
+		next = new_next;
+	}
 
-	Node* get_prev() const;
-	void set_prev(Node* new_prev); 
+	Node* get_prev() const {
+		return prev;	
+	}
+	void set_prev(Node* new_prev) {
+		prev = new_prev;
+	}
 
-	void set_particle(const Particle& new_p);
-	Particle get_particle() const; //also my bad I forgot to define it here before putting it below -Jackson
+	void set_particle(const Particle& new_p) {
+		p = new_p;
+	}
+	Particle get_particle() const {
+		return p;
+	} //also my bad I forgot to define it here before putting it below -Jackson
 
 	//pass a Data struct object here and use the assignment = operator to set the internal .data member?
 };
@@ -41,6 +53,8 @@ class Node {//					|
 //I got a multiple definitions error for all of these function, maybe move them into the class definition
 //should be ok now
 
+
+/*
 Node* Node::get_next() const {
 	return next;
 }
@@ -65,7 +79,7 @@ void Node::set_particle(const Particle& new_p) {
 Particle Node::get_particle() const {
 	return p;
 }
-
+*/
 
 #endif
 
