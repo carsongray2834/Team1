@@ -42,13 +42,14 @@ void particleTest() {
 
 void nodeTest() {	
 	Particle p1({255, 255, 255}, STREAMER, 50, 51, 1, 1, 10);
-	Node n1(p1);
-	n1.get_particle().set_type(BALLISTIC);
-	assert(n1.get_particle().get_type() == BALLISTIC);
+	Node* n1 = new Node(p1);
+	n1->get_particle().set_type(BALLISTIC);
+//	cout << n1->get_particle().get_type() << endl;
+	assert(n1->get_particle().get_type() == BALLISTIC);
 	cout << "NODE TESTS PASSED" << endl;
-	Node n2(p1);
-	n2.set_next(&n1);
-	assert(n2.get_next() == &n1);
+	Node* n2 = new Node(p1);
+	n2->set_next(n1);
+	assert(n2->get_next() == n1);
 }
 
 void particleSystemTest() {
