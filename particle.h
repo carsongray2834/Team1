@@ -37,5 +37,6 @@ public:
 	double get_ax();
 	double get_ay();
 	void move();
+	ParticleGraphics graphics();
 };
 #endif

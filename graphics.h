@@ -14,7 +14,7 @@ struct Color {
 class ParticleGraphics {
 	Color color{100,10,150};
 	public:
-	ParticleGraphics(Color c) {
+	ParticleGraphics(Color c = Color {255,0,0}) {
 		color = c;
 	}
 	void setColor(Color c) {
@@ -24,7 +24,7 @@ class ParticleGraphics {
 		return color;
 	}
 	//takes point coords
-	void drawPoint(int r, int c);
+	void drawPoint(int r, int c, Color color);
 
 	//takes upper left point, width, and height
 	void drawRect(int x, int y, int w, int h);

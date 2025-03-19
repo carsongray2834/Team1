@@ -10,7 +10,7 @@ bool ParticleSystem::firework(int x, int y) {
 	srand(time(0));
 	for (int i = 0; i < 50; i++) {
 		Particle p(Color{(rand() % 256), (rand() % 256), (rand() % 256)}, STREAMER, x, y, ((rand() % 6) - 3), ((rand() % 6) - 3), ((rand() % 8) + 2));
-	particles.insert_at_end(p);
+    	particles.insert_at_end(p);
 	}
 	return true; //in particleSystem.h the if statment checks for the creation of the firework we have to return true otherise its void 
 }
@@ -29,9 +29,9 @@ void ParticleSystem::loadParticles(Node* firstParticle){
 void ParticleSystem::drawParticles(){ 
 	List listOfParticles = mainParticleSystem.returnParticlesList();
 
-   for(int i = 0; i < mainParticleSystem.numParticles();i++){
-	   Particle holder = std::advance(listOfParticles,i);
-	   holder->draw(); //calling draw() method as defined in particle.h
+   for(int i = 0; i < listOfParticles.get_size();i++){
+	   Particle holder = listOfParticles.get_head()->get_particle();
+	   drawPoint(holder.get_y(),holder.get_x()); //calling draw() method as defined in particle.h
    }
 
 

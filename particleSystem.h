@@ -6,6 +6,7 @@
 
 //File Name: particleSystems.h
 
+
 class ParticleSystem {
 	int rows = 0;
 	int columns = 0;
@@ -36,7 +37,9 @@ public:
 	}
 	void draw(Particle pa) {
 		if (pa.get_life() > 0){ 
-		  graphics.drawPoint(pa.get_y(), pa.get_x());
+		   ParticleGraphics pg;
+		  
+		 pg.drawPoint(pa.get_y(), pa.get_x(),pa.get_color());
 		}
 	}
 	void drawParticles();
