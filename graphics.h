@@ -1,11 +1,6 @@
 #ifndef GRAPH_H
 #define GRAPH_H
 
-<<<<<<< HEAD
-//#include "Node.h"
-=======
-#include "particle.h"
->>>>>>> c605fce570c4d38480a259a7417adf5b83d8ffad
 #include <vector>
 
 struct Color {
