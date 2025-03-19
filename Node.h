@@ -44,7 +44,7 @@ class Node {//					|
 	Particle get_particle() const {
 		return p;
 	}
-     	void operator==(const Node* other) {return next == other->get_next() && prev == other->get_prev();}
+     	bool operator==(const Node* other) {return next == other->get_next() && prev == other->get_prev();}
 //also my bad I forgot to define it here before putting it below -Jackson
 
 	//pass a Data struct object here and use the assignment = operator to set the internal .data member?
