@@ -10,7 +10,7 @@ class ParticleSystem {
 	int rows = 0;
 	int columns = 0;
 	List particles;
-	ParticleGraphics graphics(Color{0, 0, 0});
+	ParticleGraphics graphics{Color{0, 0, 0}};
 public:
 	ParticleSystem(int nRows = 0, int nColumns = 0) {
 		if (nRows < 0) nRows = 0;
@@ -26,18 +26,22 @@ public:
 		for (int i = 0; i < particles.get_size(); i++) {
 			temp->get_particle().move();
 			draw(temp->get_particle());
-			if ((temp->get_particle().get_type() == STREAMER) && (temp->get_particle().get_life() = 0) firework(temp->get_particle().get_x(), temp->get_particle.get_y()); 
+			if ((temp->get_particle().get_type() == STREAMER) && (temp->get_particle().get_life() == 0) && firework(temp->get_particle().get_x(), temp->get_particle().get_y())){
+
+			} 
 
 	   		clearscreen();
 		}
 	}
 	void draw(Particle p) {
-		if (p.get_life >=) graphics.drawPoint(p.get_y(), p.get_x());
+		if (p.get_life() >= p.life){ 
+		  graphics.drawPoint(p.get_y(), p.get_x())
+		}
 	}
 	void add(Particle p) {particles.insert_at_end(p);}
-	void firework(int x, int y);
+	bool firework(int x, int y);
 	//This method was giving errors, and I don't think its necessary
-	//std::list returnParticlesList(){return particles;}
+	List returnParticlesList(){return particles;}
 
 	//if this is your key I wouldn't put it here because it it public to github now
 //>>>>>>> 1db294e4ef3ac28ddb9d3369a2e60c3b6909e52b
