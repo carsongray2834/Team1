@@ -21,7 +21,7 @@ class List {
 	int get_size() const; 
 	Node* get_head() const {return head;}
 	void insert_at_end(Particle& p);
-	void delete_current();
+	void delete_current(Node* current);
 
 
 
