@@ -15,6 +15,7 @@ void die2(string s = "") {
 	else {
 		cout << s << endl;
 	}
+	exit(1);
 }
 
 
