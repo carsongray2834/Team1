@@ -8,14 +8,70 @@ void nodeTest();
 void particleSystemTest();
 void graphicsTest();
 
-int main(){
-	//RUN TESTS HERE:
-	particleTest();
-	nodeTest();
-	//particleSystemTest();
-	graphicsTest();
+void die2(string s = "") {
+	if(s == "") {
+		cout << "BAD INPUT" << endl;
+	}
+	else {
+		cout << s << endl;
+	}
+}
 
-	cout << "ALL TESTS PASSED" << endl;
+
+int main(){
+	int choice = 0;
+	cout << "1. Run all tests\n";
+	cout << "2. Add a particle to the particle system(list)\n";
+	cout << "3. Draw all partices in particle system(list)\n";
+	cout << "4. Run physics on added particles(loops)\n";
+	// make a run physics for one frame?
+	cout << "5. {insert name for your particle scene here} PartcleSystem#1\n";
+	//I claim 1, Jackson
+	cout << "6. {insert name for your particle scene here} PartcleSystem#2\n";
+	cout << "7. {insert name for your particle scene here} PartcleSystem#3\n";
+	cout << "8. {insert name for your particle scene here} PartcleSystem#4\n";
+	cout.flush();
+
+	cout << "Enter choice: " << endl;
+	cin >> choice;
+	if(!cin) die2("Choice must be a number!");
+	if(cin.eof) die2("EOF");
+
+
+	if(choice == 1) {
+		//RUN TESTS HERE:
+		particleTest();
+		nodeTest();
+		//particleSystemTest();
+		graphicsTest();
+		cout << "ALL TESTS PASSED" << endl;
+	}
+	else if(choice == 2) {
+
+	}
+	else if(choice == 3) {
+
+	}
+	else if(choice == 4) {
+
+	}
+	else if(choice == 5) {
+
+	}
+	else if(choice == 6) {
+
+	}
+	else if(choice == 7) {
+
+	}
+	else if(choice == 8) {
+
+	}
+	else {
+		die2("Choice must be from 1 to 8!");
+	}
+
+
 	return 0;
 }
 
