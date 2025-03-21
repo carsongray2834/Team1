@@ -166,9 +166,9 @@ void particleTest2() {
 	clearscreen();
 	ParticleSystem p(100, 100);
 	for (int i = 0; i < 100; i++) {
-	p.add(Particle({0, 255, 100}, FIREWORK, (rand() % 30), 1, ((rand() % 6) - 3), 0, 5));
+	p.add(Particle({0, 255, 100}, FIREWORK, (rand() % 100), 1, ((rand() % 6) - 3), 0, 5));
 		p.moveAndDraw();
-		usleep(100'000);
+		usleep(50'000);
 	}
 	clearscreen();
 
