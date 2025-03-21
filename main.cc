@@ -124,6 +124,8 @@ void nodeTest() {
 	Node* n2 = new Node(p1);
 	n2->set_next(n1);
 	assert(n2->get_next() == n1);
+	delete n1;
+	delete n2;
 }
 
 void particleSystemTest() {
