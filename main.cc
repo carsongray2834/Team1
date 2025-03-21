@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cassert>
+#include "carson.h"
 #include "particleSystem.h"
 using namespace std;
 
