@@ -41,7 +41,7 @@ class Node {//					|
 	void set_particle(const Particle& new_p) {
 		p = new_p;
 	}
-	Particle get_particle() const {
+	Particle& get_particle() {
 		return p;
 	}
     bool operator==(const Node* other) {return next == other->get_next() && prev == other->get_prev();}

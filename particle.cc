@@ -14,7 +14,7 @@ Particle::Particle (Color newC, Type newType, int newX, int newY, double newDx, 
 	dy = newDy;
 	if (newLife < 0) newLife = 0;
 	life = newLife;
-	if (type == BALLISTIC) ay = .981;
+	if ((type == BALLISTIC) || (type == FIREWORK)) ay = .981;
 }
 Color Particle::get_color() {return c;}
 void Particle::set_color(Color newC) {c = newC;}
@@ -55,5 +55,3 @@ void Particle::move() {
 	//had to implement fireworks in particleSystem since
 	//i would need to add new particles
 }
-//if life < 0, then the particles should stop being drawn, I don't think there's a delete function yet
-

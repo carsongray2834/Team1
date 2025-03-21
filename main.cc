@@ -29,6 +29,7 @@ int main(){
 	cout << "5. {insert name for your particle scene here} PartcleSystem#1\n";
 	//I claim 1, Jackson
 	cout << "6. {insert name for your particle scene here} PartcleSystem#2\n";
+	//I'll take this second one, Carson
 	cout << "7. {insert name for your particle scene here} PartcleSystem#3\n";
 	cout << "8. {insert name for your particle scene here} PartcleSystem#4\n";
 	//I claim this bottom one, Gurshan
@@ -118,7 +119,6 @@ void nodeTest() {
 	Particle p1({255, 255, 255}, STREAMER, 50, 51, 1, 1, 10);
 	Node* n1 = new Node(p1);
 	n1->get_particle().set_type(BALLISTIC);
-//	cout << n1->get_particle().get_type() << endl;
 	assert(n1->get_particle().get_type() == BALLISTIC);
 	cout << "NODE TESTS PASSED" << endl;
 	Node* n2 = new Node(p1);
