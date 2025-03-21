@@ -26,14 +26,14 @@ void ParticleSystem::loadParticles(Node* firstParticle){
 }
 
 void ParticleSystem::drawParticles(){ 
-	List listOfParticles = mainParticleSystem.returnParticlesList();
-	Particle holder = listOfParticles.get_head()->get_particle();
+//	List listOfParticles = mainParticleSystem.returnParticlesList();
+	Particle holder = particles.get_tail()->get_particle();
 
-	for(int i = 0; i < listOfParticles.get_size();i++){ 
+	for(int i = 0; i < particles.get_size();i++){ 
 
 		graphics.drawPoint(holder.get_y(),holder.get_x()); //calling draw() method as defined in particle.h
 		holder.move();
-		holder = listOfParticles.get_tail()->get_particle(); //lets move on to the tail of where its pointing so we can draw the next particle
+		holder = particles.get_tail()->get_particle(); //lets move on to the tail of where its pointing so we can draw the next particle
 	}
 }
 
