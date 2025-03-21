@@ -6,6 +6,7 @@ using namespace std;
 
 void particleTest();
 void nodeTest();
+void listTest();
 void particleSystemTest();
 void graphicsTest();
 void particleTest2();
@@ -56,6 +57,7 @@ int main(){
 			graphicsTest();
 			particleTest();
 			nodeTest();
+			listTest();
 			//particleSystemTest();
 			cout << "ALL TESTS PASSED" << endl;
 		}
@@ -143,6 +145,18 @@ void nodeTest() {
 	assert(n2->get_next() == n1);
 	delete n1;
 	delete n2;
+}
+
+void listTest() {
+	List test;
+	Particle p;
+	test.insert_at_end(p);
+	cout << "Particle added\n";
+	Node* n = test.get_head();
+	Node* m = test.get_tail();
+	assert(n == m);
+	delete n;
+	delete m;
 }
 
 void particleSystemTest() {
