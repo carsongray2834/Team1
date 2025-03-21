@@ -45,7 +45,8 @@ public:
 	void drawParticles();
 	void add(Particle p) {particles.insert_at_end(p);}
 	bool firework(int x, int y);
-	//This method was giving errors, and I don't think its necessary
+    void moveParticles(Node*, double, double);
+
 	List returnParticlesList(){return particles;}
 
 	//if this is your key I wouldn't put it here because it it public to github now

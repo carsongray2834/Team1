@@ -20,6 +20,7 @@ class List {
 
 	int get_size() const; 
 	Node* get_head() const {return head;}
+	Node* get_tail() const {return tail;}
 	void insert_at_end(Particle& p);
 	void delete_current(Node* current);
 
