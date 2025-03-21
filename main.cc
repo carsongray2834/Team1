@@ -36,7 +36,7 @@ int main(){
 	cout << "Enter choice: " << endl;
 	cin >> choice;
 	if(!cin) die2("Choice must be a number!");
-	if(cin.eof) die2("EOF");
+	if(cin.eof()) die2("EOF");
 
 
 	if(choice == 1) {

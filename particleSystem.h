@@ -38,8 +38,8 @@ public:
 	void draw(Particle pa) {
 		if (pa.get_life() > 0){ 
 		   ParticleGraphics pg;
-		  
-		 pg.drawPoint(pa.get_y(), pa.get_x(),pa.get_color());
+		 pg.setColor(pa.get_color());
+		 pg.drawPoint(pa.get_y(), pa.get_x());
 		}
 	}
 	void drawParticles();

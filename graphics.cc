@@ -9,7 +9,7 @@ void die() {
 	exit(0);
 }
 
-void ParticleGraphics::drawPoint(int r, int c, Color color) {
+void ParticleGraphics::drawPoint(int r, int c) {
 	movecursor(r,c);
 	setbgcolor(color.r,color.g,color.b);
 	cout << " " << flush;

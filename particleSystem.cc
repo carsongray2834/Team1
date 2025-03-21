@@ -31,17 +31,18 @@ void ParticleSystem::drawParticles(){
 
    for(int i = 0; i < listOfParticles.get_size();i++){
 	   Particle holder = listOfParticles.get_head()->get_particle();
-	   drawPoint(holder.get_y(),holder.get_x()); //calling draw() method as defined in particle.h
+	   graphics.drawPoint(holder.get_y(),holder.get_x()); //calling draw() method as defined in particle.h
    }
 
 
 }
 
-void ParticleSystem::moveParticles(Node* firstParticle,double newdx, double, newdy){ //I am going to assume that move means we are moving with gravity.
+/* Uncomment this when moveParticles() is ready in particleSystem.h
+void ParticleSystem::moveParticles(Node* firstParticle,double newdx, double newdy){ //I am going to assume that move means we are moving with gravity.
   //Function paramater: the first element in LL because we need to move them all not just one. We need to go over the list.
 
 
 }
-
+*/
 
 

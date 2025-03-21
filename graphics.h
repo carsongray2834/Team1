@@ -24,7 +24,7 @@ class ParticleGraphics {
 		return color;
 	}
 	//takes point coords
-	void drawPoint(int r, int c, Color color);
+	void drawPoint(int r, int c);
 
 	//takes upper left point, width, and height
 	void drawRect(int x, int y, int w, int h);
