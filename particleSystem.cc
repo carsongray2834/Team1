@@ -1,3 +1,5 @@
+
+
 #include <iostream> //For debugging via cout
 #include "linkedlist.h"
 #include "particleSystem.h"
@@ -35,7 +37,7 @@ void ParticleSystem::drawParticles(){
 	}
 }
 
-// /* Uncomment this when moveParticles() is ready in particleSystem.h
+// Uncomment this when moveParticles() is ready in particleSystem.h
 void ParticleSystem::moveParticles(Node* firstParticle,double newdx, double newdy){ //I am going to assume that move means we are moving with gravity.
 	//Function paramater: the first element in LL because we need to move them all not just one. We need to go over the list.
 
@@ -51,6 +53,6 @@ void ParticleSystem::moveParticles(Node* firstParticle,double newdx, double newd
 
 
 }
-//*/
+
 
 
