@@ -27,24 +27,22 @@ public:
 		clearscreen();
 		Node* temp = particles.get_head();
 		while (temp != nullptr) {
-			if ((temp->get_particle().get_type() == FIREWORK) && (temp->get_particle().get_life() == 0) && firework(temp->get_particle().get_x(), temp->get_particle().get_y())){} 
+			if ((temp->get_particle().get_life() >= 0) && (temp->get_particle().get_x() > 1) && (temp->get_particle().get_y() > 1) && (temp->get_particle().get_x() < columns) && (temp->get_particle().get_y() < rows)){ 
+				draw(temp->get_particle());
+			if ((temp->get_particle().get_type() == FIREWORK) && (temp->get_particle().get_life() == 0) && firework(temp->get_particle().get_x(), temp->get_particle().get_y())){}
+			}
+			if ((temp->get_particle().get_life() < 0) && (temp != particles.get_head())) {
+				Node* temp2 = temp->get_prev();
+				particles.delete_current(temp);
+				temp = temp2;
+			}
 			temp->get_particle().move();
 			temp = temp->get_next();
 		}
-		temp = particles.get_head();
-		while (temp != nullptr) {
-			draw(temp->get_particle());
-			temp = temp->get_next();
-		}
-		/*if ((temp->get_particle().get_x() < 1)) {
-			particles.delete_current(temp);
-		}*/
 	}
 	void draw(Particle pa) {
-		if ((pa.get_life() > 0) && (pa.get_x() > 1) && (pa.get_y() > 1) && (pa.get_x() < columns) && (pa.get_y() < rows)){ 
-			graphics.setColor(pa.get_color());
-			graphics.drawPoint(pa.get_y(), pa.get_x());
-		}
+		graphics.setColor(pa.get_color());
+		graphics.drawPoint(pa.get_y(), pa.get_x());
 	}
 	void drawParticles();
 	void add(Particle p) {particles.insert_at_end(p);}
