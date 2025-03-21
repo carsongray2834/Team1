@@ -23,87 +23,91 @@ void die2(string s = "") {
 
 int main(){
 	int choice = 0;
-	cout << "1. Run all tests\n";
-	cout << "2. Add a particle to the particle system(list)\n";
-	cout << "3. Draw all partices in particle system(list)\n";
-	cout << "4. Run physics on added particles(loops)\n";
-	// make a run physics for one frame?
-	cout << "5. {insert name for your particle scene here} PartcleSystem#1\n";
-	//I claim 1, Jackson
-	cout << "6. {insert name for your particle scene here} PartcleSystem#2\n";
-	//I'll take this second one, Carson
-	cout << "7. {insert name for your particle scene here} PartcleSystem#3\n";
-	cout << "8. {insert name for your particle scene here} PartcleSystem#4\n";
-	//I claim this bottom one, Gurshan
-	cout << "9. Run particle tests\n";
-	cout << "10. Run node tests\n";
-	cout << "11. Run particle system tests\n";
-	cout << "12. Run graphics tests\n";
-	cout.flush();
-
-	cout << "Enter choice: " << endl;
-	cin >> choice;
-	if(!cin) die2("Choice must be a number!");
-	if(cin.eof()) die2("EOF");
-
-	
 	ParticleSystem part(100,100);
-	if(choice == 1) {
-		//RUN TESTS HERE:
-		graphicsTest();
-		particleTest();
-		nodeTest();
-		//particleSystemTest();
-		cout << "ALL TESTS PASSED" << endl;
-	}
-	else if(choice == 2) {
-		srand(time(0));
-		cout << "What particle location do you want? (type two, rows, cols)\n";
-		int x, y = 0;
-		cin >> x >> y;
-		cout << "Type x velcity and y velocity\n";
-		double dx, dy = 0.;
-		cin >> dx >> dy;
-		Color c(255, 0, 0);
-		Particle prt(c, STREAMER, x, y, dx, dy, 100);
-		part.add(prt);
-		cout << "Particle added!" << endl;
-	}
-	else if(choice == 3) {
-		
-	}
-	else if(choice == 4) {
+	while(true) {
 
-	}
-	else if(choice == 5) {
+		cout << "0. to break\n";
+		cout << "1. Run all tests\n";
+		cout << "2. Add a particle to the particle system(list)\n";
+		cout << "3. Draw all partices in particle system(list)\n";
+		cout << "4. Run physics on added particles(loops)\n";
+		// make a run physics for one frame?
+		cout << "5. {insert name for your particle scene here} PartcleSystem#1\n";
+		//I claim 1, Jackson
+		cout << "6. {insert name for your particle scene here} PartcleSystem#2\n";
+		//I'll take this second one, Carson
+		cout << "7. {insert name for your particle scene here} PartcleSystem#3\n";
+		cout << "8. {insert name for your particle scene here} PartcleSystem#4\n";
+		//I claim this bottom one, Gurshan
+		cout << "9. Run particle tests\n";
+		cout << "10. Run node tests\n";
+		cout << "11. Run particle system tests\n";
+		cout << "12. Run graphics tests\n";
+		cout.flush();
 
-	}
-	else if(choice == 6) {
-		carsoneffect();
-	}
-	else if(choice == 7) {
+		cout << "Enter choice: " << endl;
+		cin >> choice;
+		if(!cin) die2("Choice must be a number!");
+		if(cin.eof()) die2("EOF");
 
-	}
-	else if(choice == 8) {
+		if(choice == 0) break;
+		if(choice == 1) {
+			//RUN TESTS HERE:
+			graphicsTest();
+			particleTest();
+			nodeTest();
+			//particleSystemTest();
+			cout << "ALL TESTS PASSED" << endl;
+		}
+		else if(choice == 2) {
+			srand(time(0));
+			cout << "What particle location do you want? (type two, rows, cols)\n";
+			int x, y = 0;
+			cin >> x >> y;
+			cout << "Type x velcity and y velocity\n";
+			double dx, dy = 0.;
+			cin >> dx >> dy;
+			Color c(255, 0, 0);
+			Particle prt(c, STREAMER, x, y, dx, dy, 100);
+			part.add(prt);
+			cout << "Particle added!" << endl;
+		}
+		else if(choice == 3) {
+			part.drawParticles();
+		}
+		else if(choice == 4) {
 
-	}
-	else if(choice == 9) {
-		particleTest();
-	}
-	else if(choice == 10) {
-		nodeTest();
-	}
-	else if(choice == 11) {
-		particleSystemTest();
-	}
-	else if(choice == 12) {
-		graphicsTest();
-	}
-	else {
-		die2("Choice must be from 1 to 8!");
-	}
+		}
+		else if(choice == 5) {
 
+		}
+		else if(choice == 6) {
+			carsoneffect();
+		}
+		else if(choice == 7) {
 
+		}
+		else if(choice == 8) {
+
+		}
+		else if(choice == 9) {
+			particleTest();
+		}
+		else if(choice == 10) {
+			nodeTest();
+		}
+		else if(choice == 11) {
+			particleSystemTest();
+		}
+		else if(choice == 12) {
+			graphicsTest();
+		}
+		else {
+			die2("Choice must be from 1 to 8!");
+		}
+	}
+	
+	cout << "Exited program!" << endl;
 	return 0;
 }
 
