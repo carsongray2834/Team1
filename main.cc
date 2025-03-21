@@ -79,7 +79,7 @@ int main(){
 
 	}
 	else if(choice == 6) {
-		particleTest2();
+		carsoneffect();
 	}
 	else if(choice == 7) {
 
