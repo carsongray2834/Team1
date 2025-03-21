@@ -56,19 +56,20 @@ int main(){
 		cout << "ALL TESTS PASSED" << endl;
 	}
 	else if(choice == 2) {
+		srand(time(0));
 		cout << "What particle location do you want? (type two, rows, cols)\n";
 		int x, y = 0;
 		cin >> x >> y;
 		cout << "Type x velcity and y velocity\n";
 		double dx, dy = 0.;
 		cin >> dx >> dy;
-		Color c(255, 0, 0);
+		Color c(, 0, 0);
 		Particle prt(c, STREAMER, x, y, dx, dy, 100);
 		part.add(prt);
 		cout << "Particle added!" << endl;
 	}
 	else if(choice == 3) {
-		
+		Node* temp = 
 	}
 	else if(choice == 4) {
 
