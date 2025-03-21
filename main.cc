@@ -45,7 +45,8 @@ int main(){
 	if(!cin) die2("Choice must be a number!");
 	if(cin.eof()) die2("EOF");
 
-
+	
+	ParticleSystem part(100,100);
 	if(choice == 1) {
 		//RUN TESTS HERE:
 		graphicsTest();
@@ -55,7 +56,15 @@ int main(){
 		cout << "ALL TESTS PASSED" << endl;
 	}
 	else if(choice == 2) {
-
+		cout << "What particle location do you want? (type two, rows, cols)\n";
+		int x, y = 0;
+		cin >> x >> y;
+		cout << "Type x velcity and y velocity\n"
+		double dx, dy = 0.;
+		cin >> dx >> dy;
+		Particle prt = {x, y, dx, dy, 100};
+		part.add(p);
+		cout << "Particle added!" << endl;
 	}
 	else if(choice == 3) {
 
