@@ -35,12 +35,12 @@ void ParticleGraphics::drawOval(int r, int c, int w, int h) {
 			double di = i - r;
 			double dj = j - c;
 			if ((((di*di)/(b*b)) + ((dj*dj)/(a*a))) <= 1.001) {
-				setColor(Color{255,0,0});
+				//setColor(Color{255,0,0});
 				drawPoint(i,j);
 			}
 			else {
-				setColor(Color{0,255,0});
-				drawPoint(i,j);
+				//setColor(Color{0,255,0});
+				//drawPoint(i,j);
 			}
 		}
 	}
