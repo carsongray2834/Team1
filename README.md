@@ -30,3 +30,7 @@ Particle system class
 
     My idea is to make a little faucet that drips water on mouse click and it will explode after a few clicks.  
 
+NOTES:
+For drawing shapes and measuring scale: remember that width increases half as fast as height. drawRect(row,column, 20, 10) will draw a square. drawOval(center row, center column, 20, 10) will draw a circle. 
+
+

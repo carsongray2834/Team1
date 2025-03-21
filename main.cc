@@ -31,6 +31,10 @@ int main(){
 	cout << "6. {insert name for your particle scene here} PartcleSystem#2\n";
 	cout << "7. {insert name for your particle scene here} PartcleSystem#3\n";
 	cout << "8. {insert name for your particle scene here} PartcleSystem#4\n";
+	cout << "9. Run particle tests\n";
+	cout << "10. Run node tests\n";
+	cout << "11. Run particle system tests\n";
+	cout << "12. Run graphics tests\n";
 	cout.flush();
 
 	cout << "Enter choice: " << endl;
@@ -41,10 +45,10 @@ int main(){
 
 	if(choice == 1) {
 		//RUN TESTS HERE:
+		graphicsTest();
 		particleTest();
 		nodeTest();
 		//particleSystemTest();
-		graphicsTest();
 		cout << "ALL TESTS PASSED" << endl;
 	}
 	else if(choice == 2) {
@@ -67,6 +71,18 @@ int main(){
 	}
 	else if(choice == 8) {
 
+	}
+	else if(choice == 9) {
+		particleTest();
+	}
+	else if(choice == 10) {
+		nodeTest();
+	}
+	else if(choice == 11) {
+		particleSystemTest();
+	}
+	else if(choice == 12) {
+		graphicsTest();
 	}
 	else {
 		die2("Choice must be from 1 to 8!");
@@ -128,10 +144,14 @@ void graphicsTest() {
 	assert(p.getColor().b == 0);
 	assert(p.getColor().g == 0);
 	
-	//clear_screen();//always clear the screen before using this class. It gets cursed. 
+	clearscreen();//always clear the screen before using this class. It gets cursed. 
+	
 	p.setColor(Color{255,0,0});
 	p.drawPoint(10,10);
-	//reset_color();
+	p.drawRect(11,11,11,15);
+	p.drawOval(30,50,40,20);
+
+	resetcolor();//always reset the color when you're done with graphics. 
 
 	cout << "GRAPHICS TESTS PASSED" << endl;
 }
