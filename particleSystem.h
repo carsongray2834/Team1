@@ -24,33 +24,33 @@ public:
 	int get_columns() {return columns;}
 	int numParticles() {return particles.get_size();}
 	void moveAndDraw() {
+		clearscreen();
 		Node* temp = particles.get_head();
-		for (int i = 0; i < particles.get_size(); i++) {
-			temp->get_particle().move();
+		while (temp != nullptr) {
 			draw(temp->get_particle());
-			if ((temp->get_particle().get_type() == STREAMER) && (temp->get_particle().get_life() == 0) && firework(temp->get_particle().get_x(), temp->get_particle().get_y())){
-
-			} 
-
-	   		clearscreen();
+			if ((temp->get_particle().get_type() == FIREWORK) && (temp->get_particle().get_life() == 0) && firework(temp->get_particle().get_x(), temp->get_particle().get_y())){} 
+			temp->get_particle().move();
+			temp = temp->get_next();
 		}
+		/*if ((temp->get_particle().get_x() < 1)) {
+			particles.delete_current(temp);
+		}*/
 	}
 	void draw(Particle pa) {
 		if (pa.get_life() > 0){ 
-		   ParticleGraphics pg;
-		 pg.setColor(pa.get_color());
-		 pg.drawPoint(pa.get_y(), pa.get_x());
+			graphics.setColor(pa.get_color());
+			graphics.drawPoint(pa.get_y(), pa.get_x());
 		}
 	}
 	void drawParticles();
 	void add(Particle p) {particles.insert_at_end(p);}
 	bool firework(int x, int y);
-    void moveParticles(Node*, double, double);
+	void moveParticles(Node*, double, double);
 
 	List returnParticlesList(){return particles;}
 
 	//if this is your key I wouldn't put it here because it it public to github now
-//>>>>>>> 1db294e4ef3ac28ddb9d3369a2e60c3b6909e52b
+	//>>>>>>> 1db294e4ef3ac28ddb9d3369a2e60c3b6909e52b
 
 	//^^This is not my key I think git hub might have generated it idk. -Gurshan
 

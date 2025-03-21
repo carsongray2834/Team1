@@ -7,6 +7,7 @@ void particleTest();
 void nodeTest();
 void particleSystemTest();
 void graphicsTest();
+void particleTest2();
 
 void die2(string s = "") {
 	if(s == "") {
@@ -66,7 +67,7 @@ int main(){
 
 	}
 	else if(choice == 6) {
-
+		particleTest2();
 	}
 	else if(choice == 7) {
 
@@ -159,3 +160,18 @@ void graphicsTest() {
 	cout << "GRAPHICS TESTS PASSED" << endl;
 }
 
+void particleTest2() {
+	srand(time(0));
+	show_cursor(false);
+	clearscreen();
+	ParticleSystem p(100, 100);
+	for (int i = 0; i < 100; i++) {
+	p.add(Particle({0, 255, 100}, FIREWORK, (rand() % 30), 1, ((rand() % 6) - 3), 0, 5));
+		p.moveAndDraw();
+		usleep(100'000);
+	}
+	clearscreen();
+
+	resetcolor();
+	show_cursor(true);
+}

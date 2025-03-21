@@ -48,9 +48,10 @@ void Particle::move() {
 	const int dt = 1; //amount of "frames" since last move() call
 	//could be used to change the time scale
 	dx += std::round(ax * dt);
-	dy += std::round(ax * dt);
+	dy += std::round(ay * dt);
 	x += std::round(dx * dt);
 	y += std::round(dy * dt);
+	//std::cout << std::round(dy * dt);
 	life--;
 	//had to implement fireworks in particleSystem since
 	//i would need to add new particles
