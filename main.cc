@@ -59,15 +59,16 @@ int main(){
 		cout << "What particle location do you want? (type two, rows, cols)\n";
 		int x, y = 0;
 		cin >> x >> y;
-		cout << "Type x velcity and y velocity\n"
+		cout << "Type x velcity and y velocity\n";
 		double dx, dy = 0.;
 		cin >> dx >> dy;
-		Particle prt = {x, y, dx, dy, 100};
-		part.add(p);
+		Color c(255, 0, 0);
+		Particle prt(c, STREAMER, x, y, dx, dy, 100);
+		part.add(prt);
 		cout << "Particle added!" << endl;
 	}
 	else if(choice == 3) {
-
+		
 	}
 	else if(choice == 4) {
 
