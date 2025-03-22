@@ -25,6 +25,8 @@ class ParticleGraphics {
 	}
 	//takes point coords
 	void drawPoint(int r, int c);
+	//draw point with char
+	void drawPoint(int r, int c, char ch);
 
 	//takes upper left point, width, and height
 	void drawRect(int x, int y, int w, int h);

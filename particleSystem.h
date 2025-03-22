@@ -42,7 +42,7 @@ public:
 	}
 	void draw(Particle pa) {
 		graphics.setColor(pa.get_color());
-		graphics.drawPoint(pa.get_y(), pa.get_x());
+		graphics.drawPoint(pa.get_y(), pa.get_x(), pa.get_shape());
 	}
 	void drawParticles();
 	void add(Particle p) {particles.insert_at_end(p);}

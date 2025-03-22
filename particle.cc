@@ -3,7 +3,7 @@
 #include <cstdlib>
 #include <ctime>
 
-Particle::Particle (Color newC, Type newType, int newX, int newY, double newDx, double newDy, int newLife){
+Particle::Particle (Color newC, Type newType, int newX, int newY, double newDx, double newDy, int newLife, char nshape){
 	c = newC;
 	type = newType;
 	if (newX < 0) newX = 0;
@@ -14,6 +14,7 @@ Particle::Particle (Color newC, Type newType, int newX, int newY, double newDx, 
 	dy = newDy;
 	if (newLife < 0) newLife = 0;
 	life = newLife;
+	shape = nshape;
 	if ((type == BALLISTIC) || (type == FIREWORK)) ay = .981;
 }
 Color Particle::get_color() {return c;}
@@ -39,6 +40,8 @@ void Particle::set_life(int newLife) {
 	if (newLife < 0) newLife = 0;
 	life = newLife;
 }
+void Particle::set_shape(char ch) {shape = ch;}
+char Particle::get_shape() {return shape;}
 void Particle::set_ax(double n) {ax = n;}
 void Particle::set_ay(double n) {ay = n;}
 double Particle::get_ax() {return ax;}

@@ -16,6 +16,13 @@ void ParticleGraphics::drawPoint(int r, int c) {
 	resetcolor();
 }
 
+void ParticleGraphics::drawPoint(int r, int c, char ch) {
+	movecursor(r,c);
+	setbgcolor(color.r,color.g,color.b);
+	cout << ch << flush;
+	resetcolor();
+}
+
 void ParticleGraphics::drawRect(int r, int c, int w, int h) {
 	for (int i = r; i < r + h; i++) {
 		for (int j = c; j < c + w; j++) {

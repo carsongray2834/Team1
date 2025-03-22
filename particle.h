@@ -14,10 +14,11 @@ class Particle {
 	// I left acceleration out of the constructor (since it's optional)
 	//so if anyone wants to use it they'll need to use the set_ax/ay functions
 	Type type = STREAMER;
+	char shape = ' ';
 	int life;
 	Color c{255,255,255};//feel free to change the default color
 public:
-	Particle (Color newC = {255, 255, 255}, Type newType = STREAMER, int newX = 0, int newY = 0, double newDx = 0, double newDy = 0, int newLife = 1);
+	Particle (Color newC = {255, 255, 255}, Type newType = STREAMER, int newX = 0, int newY = 0, double newDx = 0, double newDy = 0, int newLife = 1, char nshape = ' ');
 	Color get_color();
 	void set_color(Color newC);
 	int get_x();
@@ -26,6 +27,8 @@ public:
 	void set_y(int nY);
 	double get_dx();
 	double get_dy();
+	void set_shape(char ch);
+	char get_shape();
 	void set_dx(double new_dx);
 	void set_dy(double new_dy);
 	Type get_type();
