@@ -83,11 +83,13 @@ int main(){
 		}
 		else if(choice == 4) {
 			int FPS = 10;
+			int dt = 1 / FPS;
 			//clearscreen();
 			show_cursor(false);
 			while(true) {
 				part.moveAndDraw();
-				usleep(1'000'000);
+				usleep(1'000'000 / FPS);
+				resetcolor();
 				
 			}
 			show_cursor(true);
