@@ -2,6 +2,7 @@
 #include <cassert>
 #include "carson.h"
 #include "particleSystem.h"
+#include </public/colors.h>
 using namespace std;
 
 void particleTest();
@@ -26,6 +27,7 @@ int main(){
 	int choice = 0;
 	auto [rows, cols] = get_terminal_size();
 	ParticleSystem part(rows-1,cols-1);
+	show_cursor(true);
 	while(true) {
 
 		cout << "0. to break\n";
@@ -80,10 +82,13 @@ int main(){
 		}
 		else if(choice == 4) {
 			int FPS = 24;
+			clearscreen();
+			show_cursor(false);
 			while(true) {
 				part.moveAndDraw();
 				usleep(1'000'000 / FPS);
 			}
+			show_cursor(true);
 		}
 		else if(choice == 5) {
 
@@ -160,8 +165,6 @@ void listTest() {
 	Node* n = test.get_head();
 	Node* m = test.get_tail();
 	assert(n == m);
-	delete n;
-	delete m;
 }
 
 void particleSystemTest() {
