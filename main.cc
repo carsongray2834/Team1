@@ -189,7 +189,7 @@ void graphicsTest() {
 	clearscreen();//always clear the screen before using this class. It gets cursed. 
 	
 	p.setColor(Color{255,0,0});
-	p.drawPoint(10,10);
+	p.drawPoint(10,10, ' ');
 	p.drawRect(11,11,11,15);
 	p.drawOval(30,50,40,20);
 
