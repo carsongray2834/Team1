@@ -27,14 +27,22 @@ void ParticleSystem::loadParticles(Node* firstParticle){
 
 void ParticleSystem::drawParticles(){ 
 //	List listOfParticles = mainParticleSystem.returnParticlesList();
-	Particle holder = particles.get_tail()->get_particle();
+	//Particle holder = particles.get_tail()->get_particle();
+	clearscreen();
+	show_cursor(false);
 
-	for(int i = 0; i < particles.get_size();i++){ 
+	for(Node* temp = particles.get_head(); temp; temp = temp->get_next()){
+		Particle current = temp->get_particle();
+		if(current.get_life() > 0) {
+			draw(current);
+		} 
 
-		graphics.drawPoint(holder.get_y(),holder.get_x()); //calling draw() method as defined in particle.h
-		holder.move();
-		holder = particles.get_tail()->get_particle(); //lets move on to the tail of where its pointing so we can draw the next particle
+		//does not delete them if life < 0!!!!!
+	//	graphics.drawPoint(current.get_y(),current.get_x()); //calling draw() method as defined in particle.h
+	//	holder.move();
+	//	holder = particles.get_tail()->get_particle(); //lets move on to the tail of where its pointing so we can draw the next particle
 	}
+	show_cursor(true);
 }
 
 // Uncomment this when moveParticles() is ready in particleSystem.h

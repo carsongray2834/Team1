@@ -69,7 +69,7 @@ int main(){
 			cout << "Type x velcity and y velocity\n";
 			double dx, dy = 0.;
 			cin >> dx >> dy;
-			Color c(255, 0, 0);
+			Color c(0, 255, 0);
 			Particle prt(c, STREAMER, x, y, dx, dy, 100);
 			part.add(prt);
 			cout << "Particle added!" << endl;
