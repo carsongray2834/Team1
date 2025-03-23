@@ -185,6 +185,7 @@ void graphicsTest() {
 	p.drawRect(11,11,11,15);
 	p.drawOval(30,50,40,20);
 
+	
 	resetcolor();//always reset the color when you're done with graphics. 
 
 	cout << "GRAPHICS TESTS PASSED" << endl;
