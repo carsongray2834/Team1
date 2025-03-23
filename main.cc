@@ -24,7 +24,8 @@ void die2(string s = "") {
 
 int main(){
 	int choice = 0;
-	ParticleSystem part(100,100);
+	auto [rows, cols] = get_terminal_size();
+	ParticleSystem part(rows-1,cols-1);
 	while(true) {
 
 		cout << "0. to break\n";
@@ -69,8 +70,8 @@ int main(){
 			cout << "Type x velcity and y velocity\n";
 			double dx, dy = 0.;
 			cin >> dx >> dy;
-			Color c(0, 255, 0);
-			Particle prt(c, STREAMER, x, y, dx, dy, 100);
+			Color c(rand() % 255, rand() % 255, rand() % 255);
+			Particle prt(c, STREAMER, x, y, dx, dy, 1440);
 			part.add(prt);
 			cout << "Particle added!" << endl;
 		}
@@ -78,7 +79,11 @@ int main(){
 			part.drawParticles();
 		}
 		else if(choice == 4) {
-
+			int FPS = 24;
+			while(true) {
+				part.moveAndDraw();
+				usleep(1'000'000 / FPS);
+			}
 		}
 		else if(choice == 5) {
 
