@@ -83,7 +83,7 @@ int main(){
 		else if(choice == 4) {
 			int FPS = 24;
 			clearscreen();
-			show_cursor(false);
+			//show_cursor(false);
 			while(true) {
 				part.moveAndDraw();
 				usleep(1'000'000 / FPS);
