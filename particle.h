@@ -39,7 +39,7 @@ public:
 	void set_ay(double n);
 	double get_ax();
 	double get_ay();
-	void move();
+	void move(int deltaT = 1);
 	ParticleGraphics graphics();
 };
 #endif

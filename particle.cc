@@ -47,8 +47,8 @@ void Particle::set_ay(double n) {ay = n;}
 double Particle::get_ax() {return ax;}
 double Particle::get_ay() {return ay;}
 //NOTE: Move function takes a particleSystem by reference in order to do the FIREWORK effect
-void Particle::move() {
-	const int dt = 1; //amount of "frames" since last move() call
+void Particle::move(int deltaT) {
+	const int dt = deltaT; //amount of "frames" since last move() call
 	//could be used to change the time scale
 	dx += std::round(ax * dt);
 	dy += std::round(ay * dt);

@@ -82,7 +82,7 @@ int main(){
 			part.drawParticles();
 		}
 		else if(choice == 4) {
-			int FPS = 10;
+			int FPS = 24;
 			int dt = 1 / FPS;
 			//clearscreen();
 			show_cursor(false);
