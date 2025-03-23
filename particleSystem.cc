@@ -34,8 +34,13 @@ void ParticleSystem::drawParticles(){
 	for(Node* temp = particles.get_head(); temp; temp = temp->get_next()){
 		Particle current = temp->get_particle();
 		if(current.get_life() > 0) {
-			draw(current);
+			graphics.setColor(current.get_color());
+			graphics.drawPoint(current.get_x(), current.get_y());
 		} 
+		else {
+			temp = temp->get_next();
+			particles.delete_current(temp->get_prev());
+		}
 
 		//does not delete them if life < 0!!!!!
 	//	graphics.drawPoint(current.get_y(),current.get_x()); //calling draw() method as defined in particle.h

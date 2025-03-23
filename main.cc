@@ -27,6 +27,7 @@ int main(){
 	int choice = 0;
 	auto [rows, cols] = get_terminal_size();
 	ParticleSystem part(rows-1,cols-1);
+	cout << rows << " " << cols << endl;
 	show_cursor(true);
 	while(true) {
 
@@ -81,12 +82,12 @@ int main(){
 			part.drawParticles();
 		}
 		else if(choice == 4) {
-			int FPS = 24;
+			int FPS = 10;
 			//clearscreen();
 			show_cursor(false);
 			while(true) {
 				part.moveAndDraw();
-				usleep(1'000'000 / FPS);
+				usleep(1'000'000);
 				
 			}
 			show_cursor(true);

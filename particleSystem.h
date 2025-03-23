@@ -40,7 +40,7 @@ public:
 			temp = temp->get_next();
 		}
 	}
-	void draw(Particle pa) {
+	void draw(Particle& pa) {
 		graphics.setColor(pa.get_color());
 		graphics.drawPoint(pa.get_y(), pa.get_x(), pa.get_shape());
 	}
