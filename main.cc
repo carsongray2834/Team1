@@ -87,7 +87,7 @@ int main(){
 			while(true) {
 				part.moveAndDraw();
 				usleep(1'000'000 / FPS);
-				clearscreen();
+				
 			}
 			show_cursor(true);
 		}
