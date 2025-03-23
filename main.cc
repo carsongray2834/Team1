@@ -74,21 +74,24 @@ int main(){
 			double dx, dy = 0.;
 			cin >> dx >> dy;
 			Color c(rand() % 255, rand() % 255, rand() % 255);
-			Particle prt(c, STREAMER, x, y, dx, dy, 1440);
+			Particle prt(c, STREAMER, x, y, dx, dy, 500); //30 second lifetime
 			part.add(prt);
 			cout << "Particle added!" << endl;
 		}
 		else if(choice == 3) {
-			part.drawParticles();
+			while(true) {
+				part.drawParticles();
+				resetcolor();
+			}
 		}
 		else if(choice == 4) {
-			int FPS = 24;
-			int dt = 1 / FPS;
+			int FPS = 10;
+			//int dt = 1 / FPS;
 			//clearscreen();
 			show_cursor(false);
 			while(true) {
 				part.moveAndDraw();
-				usleep(1'000'000 / FPS);
+				usleep(1'000'000 / FPS); // 1 second / 10 = 10 fps
 				resetcolor();
 				
 			}

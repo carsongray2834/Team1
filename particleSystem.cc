@@ -47,7 +47,7 @@ void ParticleSystem::drawParticles(){
 	//	holder.move();
 	//	holder = particles.get_tail()->get_particle(); //lets move on to the tail of where its pointing so we can draw the next particle
 	}
-	show_cursor(true);
+//	show_cursor(true); this line bugs the screen out
 }
 
 // Uncomment this when moveParticles() is ready in particleSystem.h
