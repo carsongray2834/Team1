@@ -24,34 +24,30 @@ void waterfall() {
 	}
 	
 	for(int j = 0; j < 100; j++) {
-
 		for(Node* temp = pa.get_head(); temp; temp = temp->get_next()) {
 			pa.set_color(light_gray);
 			pa.drawRect(15,0 , 10, rows - 10);
 			pa.set_color(cyan);
 			usleep(1'000'000);
 			pa.moveAndDraw();
+
 			temp->get_particle().set_type(STREAMER);
+			temp->get_particle().set_ay(0.0);
+			temp->get_particle().set_dx(1.0);
+			temp->get_particle().set_dy(0.0);
+
 
 			 // v makes it lag lol, I was trying to get it to stop at 20 and flow like a river
-			
+			/*
 			if(temp->get_particle().get_x() >= cols + 100) {
 				temp->get_particle().set_type(STREAMER);
+				temp->get_particle().set_ay(0.0);
 				temp->get_particle().set_dx(1.0);
+				temp->get_particle().set_dy(0.0);
 			//	temp->get_particle().set_y(cols - 5 + rand() % 3);
-			}
-			/*
-			if(temp->get_particle().get_x() > rows || temp->get_particle().get_y() > cols) {
-				Node* cur = temp;
-				if(temp == pa.get_tail()) {
-					temp = pa.get_head();
-				}
-				else {
-					temp = temp->get_next();
-				}
-			*/
-		}
-	}	
+			} */
+		}	
+	}
 }
 	
 	
