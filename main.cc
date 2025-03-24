@@ -201,8 +201,10 @@ void graphicsTest() {
 	p.drawRect(11,11,11,15);
 	p.drawOval(30,50,40,20);
 	p.drawLine(40,20,50,12);
-	vector<int> vec = {85,40,105,45,85,65,50,45};
+	p.setColor(Color{0,255,0});
+	vector<int> vec = {85,65,105,45,85,40,50,40};
 	p.drawPolygon(vec);
+	p.setColor(Color{255,255,255});
 	vec = {100,30,110,10,80,10,50,30};
 	p.drawPolygon(vec);
 

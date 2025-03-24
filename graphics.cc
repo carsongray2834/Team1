@@ -141,13 +141,13 @@ void ParticleGraphics::drawPolygon(vector<int> v) {
 	v.push_back(v.at(1));
 	for (int i = 2; i < v.size()-1; i+=2) {
 		drawLine(v.at(i),v.at(i+1),v.at(i-2),v.at(i-1));
-		bool bo = true;
+		bool bo = false;
 		int x1 = v.at(i-2);
 		int y1 = v.at(i-1);
 		int x2 = v.at(i);
 		int y2 = v.at(i+1);
 		if (((y1 == y2) && (x2 > x1)) || ((y2 < y1) && (x2 > x1)) || ((y2 > y1) && (x2 > x1)) || ((y2 < y1) && (x1 == x2))) {
-			bo = false;
+			bo = true;
 		}
 		boo.push_back(bo);
 	}
@@ -168,12 +168,12 @@ void ParticleGraphics::drawPolygon(vector<int> v) {
 				}
 			}
 			if (sp) {
-				setColor({255,0,0});
+				//setColor({255,0,0});
 				drawPoint(i,j);
 			}
 			else {
-				setColor({0,255,0});
-				drawPoint(i,j);
+				//setColor({0,255,0});
+				//drawPoint(i,j);
 			}
 		}
 	}
