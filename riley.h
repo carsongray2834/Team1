@@ -8,7 +8,7 @@ void scene3() {
     //      a polygonal light,
     //      a line connecting it to the top of the screen,
 	//      a spark timer releasing ballistic particles from the center of the bottom edge of the light
-	std::srand(time(0));
+//	std::srand(time(0));
 	clearscreen();
 	Color grey = Color{170,170,170};
 	Color spark = Color{230,230,0};

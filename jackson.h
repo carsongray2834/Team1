@@ -6,9 +6,9 @@ const Color cyan = {12, 245, 237};
 const Color light_gray = {200, 200, 200};
 
 namespace Jackson {
-
+		
 	auto [rows, cols] = get_terminal_size();
-	ParticleSystem pa(rows - 1, cols - 1);
+	ParticleSystem pa(cols - 1, rows - 1); //Rows is y, columns is x
 	void draw() {
 		
 	}
@@ -21,7 +21,6 @@ namespace Jackson {
 	
 	}
 	void waterfall() {
-		srand(time(0));
 		clearscreen();
 		show_cursor(false);
 		pa.set_color(light_gray);
@@ -31,14 +30,14 @@ namespace Jackson {
 				pa.set_color(light_gray);
 				pa.drawRect(15,0 , 10, rows - 10);
 				pa.set_color(cyan);
-				usleep(500'000);
 			//	pa.moveAndDraw();
-				if(temp->get_particle().get_y() <= 20) {
+				if(temp->get_particle().get_x() >= rows - 20) {
 					temp->get_particle().set_type(STREAMER);
 					temp->get_particle().set_ay(0.0);
 					temp->get_particle().set_dx(1.0);
 					temp->get_particle().set_dy(0.0);
 				}
+				usleep(500'000);
 				pa.moveAndDraw();
 
 

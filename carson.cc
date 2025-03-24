@@ -33,7 +33,7 @@ public:
 */
 void carsoneffect() {
 	//Prepares to render particles
-	std::srand(time(0));
+//	std::srand(time(0));
 	auto [rows, cols] = get_terminal_size();
 	rows--;
 	cols--;

@@ -27,6 +27,7 @@ void die2(string s = "") {
 
 
 int main(){
+	srand(time(0));
 	int choice = 0;
 	auto [rows, cols] = get_terminal_size();
 	ParticleSystem part(rows-1,cols-1);
