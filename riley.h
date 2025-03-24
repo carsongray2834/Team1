@@ -12,7 +12,7 @@ void scene3() {
 	clearscreen();
 	Color grey = Color{170,170,170};
 	Color spark = Color{230,230,0};
-	Color light = Color{179,179,0};
+	//Color light = Color{179,179,0};
 
 	int fbs = 0;
 	auto [rows,cols] = get_terminal_size();
@@ -48,7 +48,7 @@ void scene3() {
 			for (int j = 0; j < rand() % 15 + 5; j++) {
 				ps.add(Particle(spark, BALLISTIC, g, f, rand() % 7 - 3, -1 * (rand() % 2 + 1), (rand() % 6) + 3));
 			}
-			fbs = rand() % 20;
+			fbs = rand() % 20 + 5;
 		}
 		else {
 			fbs--;
@@ -60,5 +60,7 @@ void scene3() {
 		ps.drawRect(1,g,3,e);
 		usleep(100'000);
 	}
+
+	show_cursor(true);
 }
 
