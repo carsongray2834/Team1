@@ -1,6 +1,7 @@
 #include <iostream>
 #include <cassert>
 #include "carson.h"
+#include "jackson.h"
 #include "particleSystem.h"
 #include </public/colors.h>
 using namespace std;
@@ -98,7 +99,7 @@ int main(){
 			show_cursor(true);
 		}
 		else if(choice == 5) {
-
+			 waterfall();
 		}
 		else if(choice == 6) {
 			carsoneffect();

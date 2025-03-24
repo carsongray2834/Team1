@@ -22,6 +22,8 @@ public:
 	void loadParticles(Node* firstParticle);
 	int get_rows() {return rows;}
 	int get_columns() {return columns;}
+	void set_rows(int r) {rows = r;}
+	void set_columns(int c) {columns = c;}
 	void set_color(int r, int g, int b) {
 		graphics.setColor(r,g,b);
 	}
@@ -54,6 +56,9 @@ public:
 	void add(Particle p) {particles.insert_at_end(p);}
 	bool firework(int x, int y);
 	void moveParticles(Node*, double, double);
+	void drawRect(int x, int y, int w, int h) {
+		graphics.drawRect(x, y, w, h);
+	}
 
 	List returnParticlesList(){return particles;}
 
