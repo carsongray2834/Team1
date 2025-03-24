@@ -15,6 +15,8 @@ Particle::Particle (Color newC, Type newType, int newX, int newY, double newDx, 
 	if (newLife < 0) newLife = 0;
 	life = newLife;
 	shape = nshape;
+	//oldx = 0;
+	//oldy = 0;
 	if ((type == BALLISTIC) || (type == FIREWORK)) ay = .981;
 }
 Color Particle::get_color() {return c;}
@@ -46,12 +48,16 @@ void Particle::set_ax(double n) {ax = n;}
 void Particle::set_ay(double n) {ay = n;}
 double Particle::get_ax() {return ax;}
 double Particle::get_ay() {return ay;}
+//int Particle::get_ox() {return ox;}
+//int Particle::get_oy() {return oy;}
 //NOTE: Move function takes a particleSystem by reference in order to do the FIREWORK effect
 void Particle::move(int deltaT) {
 	const int dt = deltaT; //amount of "frames" since last move() call
 	//could be used to change the time scale
 	dx += std::round(ax * dt);
 	dy += std::round(ay * dt);
+	//oldx = 0;
+	//oldy = 0;
 	x += std::round(dx * dt);
 	y += std::round(dy * dt);
 	//std::cout << std::round(dy * dt);

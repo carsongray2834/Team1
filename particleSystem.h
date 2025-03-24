@@ -32,7 +32,7 @@ public:
 	}
 	int numParticles() {return particles.get_size();}
 	void moveAndDraw() {
-		clearscreen();
+		//clearscreen();
 		Node* temp = particles.get_head();
 		while (temp != nullptr) {
 			if ((temp->get_particle().get_life() >= 0) && (temp->get_particle().get_x() >= 0) && (temp->get_particle().get_y() >= 0) && (temp->get_particle().get_x() <= columns) && (temp->get_particle().get_y() <= rows)){ 
@@ -49,6 +49,8 @@ public:
 		}
 	}
 	void draw(Particle& pa) {
+		//resetcolor();
+		//graphics.drawPoint(pa.get_oy(), pa.get_ox(), ' ');
 		graphics.setColor(pa.get_color());
 		graphics.drawPoint(pa.get_y(), pa.get_x(), pa.get_shape());
 	}

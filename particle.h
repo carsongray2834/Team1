@@ -17,6 +17,8 @@ class Particle {
 	char shape = ' ';
 	int life;
 	Color c{255,255,255};//feel free to change the default color
+	//int oldx;//old x
+	//int oldy;//old y
 public:
 	Particle (Color newC = {255, 255, 255}, Type newType = STREAMER, int newX = 0, int newY = 0, double newDx = 0, double newDy = 0, int newLife = 1, char nshape = ' ');
 	Color get_color();
@@ -39,6 +41,8 @@ public:
 	void set_ay(double n);
 	double get_ax();
 	double get_ay();
+	//int get_ox();
+	//int get_oy();
 	void move(int deltaT = 1);
 	ParticleGraphics graphics();
 };
