@@ -30,6 +30,12 @@ public:
 	void set_color(Color c) {
 		graphics.setColor(c);
 	}
+	Node* get_head() {
+		return particles.get_head();
+	}
+	Node* get_tail() { 
+		return particles.get_tail();
+	}
 	int numParticles() {return particles.get_size();}
 	void moveAndDraw() {
 		clearscreen();
