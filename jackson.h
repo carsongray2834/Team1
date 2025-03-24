@@ -24,9 +24,9 @@ void waterfall() {
 	for(int j = 0; j < 100; j++) {
 		pa.set_color(cyan);
 		pa.moveAndDraw();
-		usleep(250'000); // 4 fps
 		pa.set_color(light_gray);
-		pa.drawRect(15,0 , 10, rows - 20);	
+		pa.drawRect(15,0 , 10, rows - 20);
+		usleep(250'000); // 4 fps
 	}
 	
 }	
