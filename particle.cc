@@ -21,8 +21,8 @@ Particle::Particle (Color newC, Type newType, int newX, int newY, double newDx, 
 }
 Color Particle::get_color() {return c;}
 void Particle::set_color(Color newC) {c = newC;}
-int Particle::get_x(){return x;}
-int Particle::get_y(){return y;}
+int Particle::get_x(){return std::round(x);}
+int Particle::get_y(){return std::round(y);}
 void Particle::set_x(int nX) {
 	if (nX < 0) nX = 0;
 	x = nX;

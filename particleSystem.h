@@ -38,8 +38,8 @@ public:
 	}
 	int numParticles() {return particles.get_size();}
 	void moveAndDraw() {
-		clearscreen();
 		Node* temp = particles.get_head();
+		clearscreen();
 		while (temp != nullptr) {
 			if ((temp->get_particle().get_life() >= 0) && (temp->get_particle().get_x() >= 0) && (temp->get_particle().get_y() >= 0) && (temp->get_particle().get_x() <= columns) && (temp->get_particle().get_y() <= rows)){ 
 				draw(temp->get_particle());
@@ -59,6 +59,7 @@ public:
 		//graphics.drawPoint(pa.get_oy(), pa.get_ox(), ' ');
 		graphics.setColor(pa.get_color());
 		graphics.drawPoint(pa.get_y(), pa.get_x(), pa.get_shape());
+		std::cout.flush();
 	}
 	void drawParticles();
 	void add(Particle p) {particles.insert_at_end(p);}

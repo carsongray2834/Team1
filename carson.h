@@ -16,30 +16,15 @@ void carsoneffect() {
 	
 	//Main loop for drawing particles
 	for (int i = 0; i < 100; i++) {
-		ps.add(Particle({(rand() % 256), (rand() % 256), (rand() % 256)}, FIREWORK, (rand() % cols), (rand() % rows), ((rand() % 6) - 3), ((rand() % 6) - 3), (rand() % 10)));
-		ps.add(Particle({(rand() % 256), (rand() % 256), (rand() % 256)}, FIREWORK, (rand() % cols), (rand() % rows), ((rand() % 6) - 3), ((rand() % 6) - 3), (rand() % 10)));
-		ps.add(Particle({(rand() % 256), (rand() % 256), (rand() % 256)}, FIREWORK, (rand() % cols), (rand() % rows), ((rand() % 6) - 3), ((rand() % 6) - 3), (rand() % 10)));
-		ps.add(Particle({(rand() % 256), (rand() % 256), (rand() % 256)}, FIREWORK, (rand() % cols), (rand() % rows), ((rand() % 6) - 3), ((rand() % 6) - 3), (rand() % 10)));
-		ps.add(Particle({(rand() % 256), (rand() % 256), (rand() % 256)}, FIREWORK, (rand() % cols), (rand() % rows), ((rand() % 6) - 3), ((rand() % 6) - 3), (rand() % 10)));
-		ps.add(Particle({(rand() % 256), (rand() % 256), (rand() % 256)}, FIREWORK, (rand() % cols), (rand() % rows), ((rand() % 6) - 3), ((rand() % 6) - 3), (rand() % 10)));
-		ps.add(Particle({(rand() % 256), (rand() % 256), (rand() % 256)}, FIREWORK, (rand() % cols), (rand() % rows), ((rand() % 6) - 3), ((rand() % 6) - 3), (rand() % 10)));
-		ps.add(Particle({(rand() % 256), (rand() % 256), (rand() % 256)}, FIREWORK, (rand() % cols), (rand() % rows), ((rand() % 6) - 3), ((rand() % 6) - 3), (rand() % 10)));
-		ps.add(Particle({(rand() % 256), (rand() % 256), (rand() % 256)}, FIREWORK, (rand() % cols), (rand() % rows), ((rand() % 6) - 3), ((rand() % 6) - 3), (rand() % 10)));
-		ps.add(Particle({(rand() % 256), (rand() % 256), (rand() % 256)}, FIREWORK, (rand() % cols), (rand() % rows), ((rand() % 6) - 3), ((rand() % 6) - 3), (rand() % 10)));
-		ps.add(Particle({(rand() % 256), (rand() % 256), (rand() % 256)}, FIREWORK, (rand() % cols), (rand() % rows), ((rand() % 6) - 3), ((rand() % 6) - 3), (rand() % 10)));
-		ps.add(Particle({(rand() % 256), (rand() % 256), (rand() % 256)}, FIREWORK, (rand() % cols), (rand() % rows), ((rand() % 6) - 3), ((rand() % 6) - 3), (rand() % 10)));
-		ps.add(Particle({(rand() % 256), (rand() % 256), (rand() % 256)}, FIREWORK, (rand() % cols), (rand() % rows), ((rand() % 6) - 3), ((rand() % 6) - 3), (rand() % 10)));
-		ps.add(Particle({(rand() % 256), (rand() % 256), (rand() % 256)}, FIREWORK, (rand() % cols), (rand() % rows), ((rand() % 6) - 3), ((rand() % 6) - 3), (rand() % 10)));
-		ps.add(Particle({(rand() % 256), (rand() % 256), (rand() % 256)}, FIREWORK, (rand() % cols), (rand() % rows), ((rand() % 6) - 3), ((rand() % 6) - 3), (rand() % 10)));
-		ps.add(Particle({(rand() % 256), (rand() % 256), (rand() % 256)}, FIREWORK, (rand() % cols), (rand() % rows), ((rand() % 6) - 3), ((rand() % 6) - 3), (rand() % 10)));
-		ps.add(Particle({(rand() % 256), (rand() % 256), (rand() % 256)}, FIREWORK, (rand() % cols), (rand() % rows), ((rand() % 6) - 3), ((rand() % 6) - 3), (rand() % 10)));
-		ps.add(Particle({(rand() % 256), (rand() % 256), (rand() % 256)}, FIREWORK, (rand() % cols), (rand() % rows), ((rand() % 6) - 3), ((rand() % 6) - 3), (rand() % 10)));
-
+		ps.add(Particle({(rand() % 256), (rand() % 256), (rand() % 256)}, BALLISTIC, (rand() % cols), (rand() % rows), ((rand() % 6) - 3), ((rand() % 6) - 3), (rand() % 10)));
+		ps.add(Particle({(rand() % 256), (rand() % 256), (rand() % 256)}, BALLISTIC, (rand() % cols), (rand() % rows), ((rand() % 6) - 3), ((rand() % 6) - 3), (rand() % 10)));
+		
 		ps.moveAndDraw();
-		usleep(100'000);
+		usleep(500'000);
 	}
 	clearscreen();
 	resetcolor();
 	show_cursor(true);
+	movecursor(0, 0);
 }
 #endif
