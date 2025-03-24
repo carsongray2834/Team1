@@ -32,16 +32,19 @@ class ParticleGraphics {
 	void drawPoint(int r, int c, char ch);
 
 	//takes upper left point, width, and height
-	void drawRect(int x, int y, int w, int h);
+	void drawRect(int r, int c, int w, int h);
 
 	//takes center point, width, and height
 	void drawOval(int x, int y, int w, int h);
 
 	//takes a vector of coords ({x1,y1,x2,y2,x3,y3,...})
+	//only convex polygons
+	//list points counterclockwise and in order, do not repeat first point
 	void drawPolygon(std::vector<int> vertices);
 	//const by reference ^
 
 	//takes two endpoints
+	//works better for lines closer to 45deg or flat, might not work for vertical lines
 	void drawLine(int x1, int y1, int x2, int y2);
 };
 
