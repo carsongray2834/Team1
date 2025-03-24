@@ -30,6 +30,8 @@ class ParticleGraphics {
 	void drawPoint(int r, int c);
 	//draw point with char
 	void drawPoint(int r, int c, char ch);
+	//draw point with color
+	void drawPoint(int r, int c, Color co);
 
 	//takes upper left point, width, and height
 	void drawRect(int r, int c, int w, int h);

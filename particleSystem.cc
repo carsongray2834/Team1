@@ -68,10 +68,14 @@ void ParticleSystem::moveParticles(){
 
 void ParticleSystem::hunt() {
 	Node* temp = particles.get_head();
+	Color c = graphics.getColor();
+	//set_color(Color{0,0,0});
 	while (temp != nullptr) {
-		set_color(Color{0,0,0});
-		graphics.drawPoint(temp->get_particle().get_y(), temp->get_particle().get_x());
+		//set_color(Color{0,0,0});
+		graphics.drawPoint(temp->get_particle().get_y(), temp->get_particle().get_x(),Color{0,0,0});
+		temp = temp->get_next();
 	}
+	set_color(c);
 }
 
 

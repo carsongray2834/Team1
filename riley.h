@@ -40,9 +40,14 @@ void scene3() {
 	std::vector<int> polyvec = {b,e,c,e,d,f,a,f};
 	polyvec = {b,e,a,f,d,f,c,e};
 
+	ps.set_color(grey);
+	ps.drawPolygon(polyvec);
+	ps.drawRect(1,g,3,e);
+
 	
 	for (int i = 0; i < 100; i++) {
-		clearscreen();
+		//clearscreen();
+		ps.hunt();
 		//ps.set_color(spark);
 		if (fbs <= 0) {
 			for (int j = 0; j < rand() % 15 + 5; j++) {
@@ -55,9 +60,9 @@ void scene3() {
 			ps.add(Particle(spark, BALLISTIC, g, f, rand() % 7 - 3, 0, (rand() % 6) + 3));
 		}
 		ps.moveAndDraw();
-		ps.set_color(grey);
+		/*ps.set_color(grey);
 		ps.drawPolygon(polyvec);
-		ps.drawRect(1,g,3,e);
+		ps.drawRect(1,g,3,e);*/
 		usleep(100'000);
 	}
 
