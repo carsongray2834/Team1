@@ -2,6 +2,7 @@
 #include <cassert>
 #include "carson.h"
 #include "jackson.h"
+#include "riley.h"
 #include "particleSystem.h"
 #include </public/colors.h>
 using namespace std;
@@ -105,7 +106,7 @@ int main(){
 			carsoneffect();
 		}
 		else if(choice == 7) {
-
+			scene3();
 		}
 		else if(choice == 8) {
 
