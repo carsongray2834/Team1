@@ -27,6 +27,7 @@ void scene3() {
 	int d = static_cast<int>(cols * 0.8);
 	int e = static_cast<int>(rows * 0.2);
 	int f = static_cast<int>(rows * 0.4);
+	int g = static_cast<int>(cols * 0.5);
 
 	/*std::cout << a << std::endl << b << std::endl << c << std::endl << d << std::endl << e << std::endl << f << std::endl;
 
@@ -42,15 +43,16 @@ void scene3() {
 	
 	for (int i = 0; i < 100; i++) {
 		clearscreen();
-		ps.set_color(grey);
-		ps.drawPolygon(polyvec);
 		//ps.set_color(spark);
 		if (fbs <= 0) {
 			for (int j = 0; j < rand() % 15 + 1; j++) {
-				ps.add(Particle(spark, BALLISTIC, static_cast<int>(cols * 0.5), static_cast<int>(rows * 0.4), rand() % 7 - 3, -1 * (rand() % 2 + 1), rand() % 6));
+				ps.add(Particle(spark, BALLISTIC, g, static_cast<int>(rows * 0.4), rand() % 7 - 3, -1 * (rand() % 2 + 1), rand() % 6));
 			}
 		}
 		ps.moveAndDraw();
+		ps.set_color(grey);
+		ps.drawPolygon(polyvec);
+		ps.drawRect(g,1,3,e);
 		usleep(100'000);
 	}
 }
