@@ -29,7 +29,7 @@ int main(){
 	int choice = 0;
 	auto [rows, cols] = get_terminal_size();
 	ParticleSystem part(rows-1,cols-1);
-	cout << rows << " " << cols << endl;
+	//cout << rows << " " << cols << endl;
 	show_cursor(true);
 	while(true) {
 
@@ -41,7 +41,7 @@ int main(){
 		// make a run physics for one frame?
 		cout << "5. Waterfall Walloganza!!!!      PartcleSystem#1\n";
 		//I claim 1, Jackson
-		cout << "6. {insert name for your particle scene here} PartcleSystem#2\n";
+		cout << "6. Whirlpool Effect              PartcleSystem#2\n";
 		//I'll take this second one, Carson
 		cout << "7. {insert name for your particle scene here} PartcleSystem#3\n";
 		cout << "8. {insert name for your particle scene here} PartcleSystem#4\n";
@@ -185,7 +185,6 @@ void listTest() {
 	List test;
 	Particle p;
 	test.insert_at_end(p);
-	cout << "Particle added\n";
 	Node* n = test.get_head();
 	Node* m = test.get_tail();
 	assert(n == m);
