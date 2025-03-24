@@ -23,7 +23,7 @@ void waterfall() {
 	}
 	for(int j = 0; j < 100; j++) {
 		pa.moveAndDraw();
-		usleep(100'000);
+		usleep(250'000); // 4 fps
 	}
 	
 }	

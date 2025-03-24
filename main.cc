@@ -38,7 +38,7 @@ int main(){
 		cout << "3. Draw all partices in particle system(list)\n";
 		cout << "4. Run physics on added particles(loops)\n";
 		// make a run physics for one frame?
-		cout << "5. {insert name for your particle scene here} PartcleSystem#1\n";
+		cout << "5. Waterfall Walloganza!!!!      PartcleSystem#1\n";
 		//I claim 1, Jackson
 		cout << "6. {insert name for your particle scene here} PartcleSystem#2\n";
 		//I'll take this second one, Carson
