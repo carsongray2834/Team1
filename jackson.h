@@ -31,10 +31,11 @@ void waterfall() {
 			pa.set_color(cyan);
 			usleep(1'000'000);
 			pa.moveAndDraw();
+			temp->get_particle().set_type(STREAMER);
 
 			 // v makes it lag lol, I was trying to get it to stop at 20 and flow like a river
 			
-			if(temp->get_particle().get_y() >= cols - 40) {
+			if(temp->get_particle().get_x() >= cols + 100) {
 				temp->get_particle().set_type(STREAMER);
 				temp->get_particle().set_dx(1.0);
 			//	temp->get_particle().set_y(cols - 5 + rand() % 3);
