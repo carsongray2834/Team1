@@ -8,11 +8,6 @@ void scene3() {
     //      a polygonal light,
     //      a line connecting it to the top of the screen,
 	//      a spark timer releasing ballistic particles from the center of the bottom edge of the light
-    //for now:
-    //      draw a rectangle
-    //      then release one round of sparks
-    //      then make lines and polygons
-    //      then set the timer
 	std::srand(time(0));
 	clearscreen();
 	Color grey = Color{170,170,170};
@@ -26,7 +21,7 @@ void scene3() {
 	std::cout << rows << std::endl << cols << std::endl;
 	ParticleSystem ps(rows, cols);
 	show_cursor(false);
-	int a = static_cast<int>(cols * 0.2);
+	/*int a = static_cast<int>(cols * 0.2);
 	int b = static_cast<int>(cols * 0.4);
 	int c = static_cast<int>(cols * 0.6);
 	int d = static_cast<int>(cols * 0.8);
@@ -39,7 +34,7 @@ void scene3() {
 	ps.drawRect(b,e,1,1);
 	ps.drawRect(c,e,1,1);
 	ps.drawRect(d,f,1,1);
-	ps.drawRect(a,f,1,1);
+	ps.drawRect(a,f,1,1);*/
 
 	std::vector<int> polyvec = {b,e,c,e,d,f,a,f};
 	polyvec = {b,e,a,f,d,f,c,e};
@@ -49,6 +44,7 @@ void scene3() {
 		clearscreen();
 		ps.set_color(grey);
 		ps.drawPolygon(polyvec);
+		ps.set_color(spark);
 		usleep(100'000);
 	}
 }
