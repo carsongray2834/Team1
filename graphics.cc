@@ -53,6 +53,30 @@ void ParticleGraphics::drawOval(int r, int c, int w, int h) {
 	}
 }
 
+void ParticleGraphics::drawLine(int x1, int y1, int x2, int y2) {
+        double a = x1;
+        double b = y1;
+        double c = x2;
+        double d = y2;
+        for (int i = min(y1,y2); i < max(y1,y2); i++) {
+                for (int j = min(x1,x2); j < max(x1,x2); j++) {
+                        if (abs(((i - b) / (d - b)) - ((j - a) / (c - a))) <= 0.001) {
+                                //setColor(Color{255,0,0});
+                                drawPoint(i,j);
+                        }
+                        else {
+                                //setColor(Color{0,255,0});
+                                //drawPoint(i,j);
+                        }
+                }
+        }
+}
+
+void ParticleGraphics::drawPolygon(vector<int> v) {
+        //
+}
+
+
 Color::Color(int new_r, int new_g, int new_b) : r(new_r), g(new_g), b(new_b) {
 	if(new_r < 0 || new_g < 0 || new_b < 0) die();
 	else if(new_r > 255 || new_b > 255 || new_g > 255) die();

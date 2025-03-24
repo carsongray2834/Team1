@@ -200,6 +200,9 @@ void graphicsTest() {
 	p.drawPoint(10,10, ' ');
 	p.drawRect(11,11,11,15);
 	p.drawOval(30,50,40,20);
+	p.drawLine(40,20,50,12);
+	vector<int> vec = {45,40,50,45,45,50,40,45};
+	p.drawPolygon(vec);
 
 	
 	resetcolor();//always reset the color when you're done with graphics. 
