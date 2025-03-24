@@ -21,14 +21,14 @@ void scene3() {
 	std::cout << rows << std::endl << cols << std::endl;
 	ParticleSystem ps(rows, cols);
 	show_cursor(false);
-	/*int a = static_cast<int>(cols * 0.2);
+	int a = static_cast<int>(cols * 0.2);
 	int b = static_cast<int>(cols * 0.4);
 	int c = static_cast<int>(cols * 0.6);
 	int d = static_cast<int>(cols * 0.8);
 	int e = static_cast<int>(rows * 0.2);
 	int f = static_cast<int>(rows * 0.4);
 
-	std::cout << a << std::endl << b << std::endl << c << std::endl << d << std::endl << e << std::endl << f << std::endl;
+	/*std::cout << a << std::endl << b << std::endl << c << std::endl << d << std::endl << e << std::endl << f << std::endl;
 
 	ps.set_color(spark);
 	ps.drawRect(b,e,1,1);
