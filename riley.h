@@ -45,13 +45,14 @@ void scene3() {
 		clearscreen();
 		//ps.set_color(spark);
 		if (fbs <= 0) {
-			for (int j = 0; j < rand() % 15 + 1; j++) {
+			for (int j = 0; j < rand() % 15 + 5; j++) {
 				ps.add(Particle(spark, BALLISTIC, g, f, rand() % 7 - 3, -1 * (rand() % 2 + 1), (rand() % 6) + 3));
 			}
 			fbs = rand() % 20;
 		}
 		else {
 			fbs--;
+			ps.add(Particle(spark, BALLISTIC, g, h, rand() % 7 - 3, 0, (rand() % 6) + 3));
 		}
 		ps.moveAndDraw();
 		ps.set_color(grey);
