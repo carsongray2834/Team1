@@ -64,7 +64,7 @@ public:
 	void drawParticles();
 	void add(Particle p) {particles.insert_at_end(p);}
 	bool firework(int x, int y);
-	void moveParticles(Node*, double, double);
+	void moveParticles();
 	void drawRect(int x, int y, int w, int h) {
 		graphics.drawRect(x, y, w, h);
 	}

@@ -37,7 +37,7 @@ int main(){
 		cout << "1. Run all tests\n";
 		cout << "2. Add a particle to the particle system(list)\n";
 		cout << "3. Draw all partices in particle system(list)\n";
-		cout << "4. Run physics on added particles(loops)\n";
+		cout << "4. Run physics on added particles\n";
 		// make a run physics for one frame?
 		cout << "5. Waterfall Walloganza!!!!      PartcleSystem#1\n";
 		//I claim 1, Jackson
@@ -79,18 +79,30 @@ int main(){
 			double dx, dy = 0.;
 			cin >> dx >> dy;
 			Color c(rand() % 255, rand() % 255, rand() % 255);
-			Particle prt(c, STREAMER, x, y, dx, dy, 500); //30 second lifetime
+			cout << "What type of particle do you want? (1 = STREAMER, 2 = BALLISTIC, 3 = FIREWORK)\n";
+			int ptype;
+			cin >> ptype;
+			Type etype = STREAMER;
+			if (ptype == 1) etype = STREAMER;
+			else if (ptype == 2) etype = BALLISTIC;
+			else if (ptype == 3) etype = FIREWORK;
+			else cout << "INVALID CHOICE, DEFAULT TYPE USED\n";
+			cout << "How many frames should this particle live?\n";
+			int plife;
+			cin >> plife;
+			Particle prt(c, etype, x, y, dx, dy, plife);
 			part.add(prt);
 			cout << "Particle added!" << endl;
 		}
 		else if(choice == 3) {
-			while(true) {
 				part.drawParticles();
-			//	resetcolor();
-			}
 		}
 		else if(choice == 4) {
-			int FPS = 10;
+			//runs physics for one frame, should it draw or nah?
+
+			part.moveParticles();
+
+			/*int FPS = 10;
 			//int dt = 1 / FPS;
 			//clearscreen();
 			show_cursor(false);
@@ -100,7 +112,7 @@ int main(){
 				resetcolor();
 				
 			}
-			show_cursor(true);
+			show_cursor(true);*/
 		}
 		else if(choice == 5) {
 			 waterfall();

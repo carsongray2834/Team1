@@ -28,41 +28,42 @@ void ParticleSystem::loadParticles(Node* firstParticle){
 void ParticleSystem::drawParticles(){ 
 //	List listOfParticles = mainParticleSystem.returnParticlesList();
 	//Particle holder = particles.get_tail()->get_particle();
+	
+	//prepares to draw
 	clearscreen();
 	show_cursor(false);
 	Node* temp = particles.get_head();
-
+	//draws the list && handles fireworks
 	while (temp != nullptr) {
-		if ((temp->get_particle().getlife() < =)) {
-			
+		//this does the culling
+		if (((temp->get_particle().get_life() < 0) || (temp->get_particle().get_x() < 0) || (temp->get_particle().get_y() < 0) || (temp->get_particle().get_x() > columns) || (temp->get_particle().get_y() > rows)) && (temp != particles.get_head())) {
+			Node* temp2 = temp->get_prev();
+			particles.delete_current(temp);
+			temp = temp2;
 		}
-
-
+		else {
+			//this handles fireworks
+			if ((temp->get_particle().get_type() == FIREWORK) && (temp->get_particle().get_life() == 0)) firework(temp->get_particle().get_x(), temp->get_particle().get_y());
+			//draws all valid particles
+			if (temp->get_particle().get_life() > 0) draw(temp->get_particle());
+		}
 		temp = temp->get_next();
 	}
-		//does not delete them if life < 0!!!!!
-	//	graphics.drawPoint(current.get_y(),current.get_x()); //calling draw() method as defined in particle.h
-	//	holder.move();
-	//	holder = particles.get_tail()->get_particle(); //lets move on to the tail of where its pointing so we can draw the next particle
-	}
-//	show_cursor(true); this line bugs the screen out
+	//displays particles for 5 secs before continuing the program
+	sleep(5);
+	clearscreen();
+	show_cursor(true);
+	movecursor(0, 0);
 }
 
 // Uncomment this when moveParticles() is ready in particleSystem.h
-void ParticleSystem::moveParticles(Node* firstParticle,double newdx, double newdy){ //I am going to assume that move means we are moving with gravity.
-	//Function paramater: the first element in LL because we need to move them all not just one. We need to go over the list.
+void ParticleSystem::moveParticles(){
+	Node* temp = particles.get_head();
 
-	List listOfParticles = mainParticleSystem.returnParticlesList();
-	Particle holder = listOfParticles.get_head()->get_particle();
-
-	for(int i = 0; i < listOfParticles.get_size();i++){ 
-
-		//This is where we set x and y
-
-		holder = listOfParticles.get_tail()->get_particle(); //lets move on to the tail of where its pointing so we can draw the next particle
+	while (temp != nullptr) {
+		temp->get_particle().move();
+		temp = temp->get_next();
 	}
-
-
 }
 
 
