@@ -36,23 +36,25 @@ void List::delete_current(Node* current) {
       }
   
       else if(head == current) {
+		  Node* temp = head;
           head = head->get_next();
-          delete head->get_prev();
+          delete temp;
           head->set_prev(nullptr);
           size--;
       }
       else if(tail == current) {
+		  Node* temp = tail;
           tail = tail->get_prev();
-          delete tail->get_next();
+          delete temp;;
           tail->set_next(nullptr);
-	  size--;
+		  size--;
       }
       else {
           Node* temp = current;
           temp->get_prev()->set_next(temp->get_next());
           temp->get_next()->set_prev(temp->get_prev());
           delete temp;
-	  size--;
+		  size--;
       }
   
  }

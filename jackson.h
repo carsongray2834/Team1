@@ -6,8 +6,12 @@ const Color cyan = {12, 245, 237};
 const Color light_gray = {200, 200, 200};
 
 namespace Jackson {
+
 	auto [rows, cols] = get_terminal_size();
 	ParticleSystem pa(rows - 1, cols - 1);
+	void draw() {
+		
+	}
 	void addWater() {
 		for(int i = 0; i < 30; i++) { //make 30 waters lol
 			Particle p(cyan, BALLISTIC, 15, 11, rand() % 10 + rand() % 12 - rand() % 5, 0, 1440); //rand isn't really random after doing it 50 times																																			//the weird + and - rand stuff is my attempt at making it more random
@@ -29,11 +33,12 @@ namespace Jackson {
 				pa.set_color(cyan);
 				usleep(500'000);
 				pa.moveAndDraw();
-
-				temp->get_particle().set_type(STREAMER);
-				temp->get_particle().set_ay(0.0);
-				temp->get_particle().set_dx(1.0);
-				temp->get_particle().set_dy(0.0);
+				if(temp->get_particle().get_y() <= 20) {
+					temp->get_particle().set_type(STREAMER);
+					temp->get_particle().set_ay(0.0);
+					temp->get_particle().set_dx(1.0);
+					temp->get_particle().set_dy(0.0);
+				}
 
 
 				 // v makes it lag lol, I was trying to get it to stop at 20 and flow like a river
