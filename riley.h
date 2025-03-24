@@ -46,7 +46,7 @@ void scene3() {
 		//ps.set_color(spark);
 		if (fbs <= 0) {
 			for (int j = 0; j < rand() % 15 + 1; j++) {
-				ps.add(Particle(spark, BALLISTIC, g, static_cast<int>(rows * 0.4), rand() % 7 - 3, -1 * (rand() % 2 + 1), (rand() % 6) + 3));
+				ps.add(Particle(spark, BALLISTIC, g, f, rand() % 7 - 3, -1 * (rand() % 2 + 1), (rand() % 6) + 3));
 			}
 			fbs = rand() % 20;
 		}
