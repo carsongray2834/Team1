@@ -117,7 +117,8 @@ int main(){
 			show_cursor(true);*/
 		}
 		else if(choice == 5) {
-			 waterfall();
+			Jackson::addWater(); 
+			Jackson::waterfall();
 		}
 		else if(choice == 6) {
 			carsoneffect();
