@@ -44,7 +44,13 @@ void scene3() {
 		clearscreen();
 		ps.set_color(grey);
 		ps.drawPolygon(polyvec);
-		ps.set_color(spark);
+		//ps.set_color(spark);
+		if (fbs <= 0) {
+			for (int j = 0; j < rand() % 15 + 1; j++) {
+				ps.add(Particle(spark, BALLISTIC, static_cast<int>(cols * 0.5), static_cast<int>(rows * 0.4), rand() % 7 - 3, -1 * (rand() % 2 + 1), rand() % 6));
+			}
+		}
+		ps.moveAndDraw();
 		usleep(100'000);
 	}
 }
