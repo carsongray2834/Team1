@@ -42,13 +42,14 @@ void scene3() {
 	ps.drawRect(a,f,1,1);
 
 	std::vector<int> polyvec = {b,e,c,e,d,f,a,f};
+	polyvec = {b,e,a,f,d,f,c,e};
 
-	/*
+	
 	for (int i = 0; i < 100; i++) {
 		clearscreen();
 		ps.set_color(grey);
 		ps.drawPolygon(polyvec);
 		usleep(100'000);
-	}*/
+	}
 }
 
