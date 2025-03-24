@@ -81,7 +81,7 @@ int main(){
 		else if(choice == 3) {
 			while(true) {
 				part.drawParticles();
-				resetcolor();
+			//	resetcolor();
 			}
 		}
 		else if(choice == 4) {

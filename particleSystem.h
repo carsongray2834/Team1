@@ -22,12 +22,18 @@ public:
 	void loadParticles(Node* firstParticle);
 	int get_rows() {return rows;}
 	int get_columns() {return columns;}
+	void set_color(int r, int g, int b) {
+		graphics.setColor(r,g,b);
+	}
+	void set_color(Color c) {
+		graphics.setColor(c);
+	}
 	int numParticles() {return particles.get_size();}
 	void moveAndDraw() {
 		clearscreen();
 		Node* temp = particles.get_head();
 		while (temp != nullptr) {
-			if ((temp->get_particle().get_life() >= 0) && (temp->get_particle().get_x() > 1) && (temp->get_particle().get_y() > 1) && (temp->get_particle().get_x() < columns) && (temp->get_particle().get_y() < rows)){ 
+			if ((temp->get_particle().get_life() >= 0) && (temp->get_particle().get_x() >= 0) && (temp->get_particle().get_y() >= 0) && (temp->get_particle().get_x() <= columns) && (temp->get_particle().get_y() <= rows)){ 
 				draw(temp->get_particle());
 			if ((temp->get_particle().get_type() == FIREWORK) && (temp->get_particle().get_life() == 0) && firework(temp->get_particle().get_x(), temp->get_particle().get_y())){}
 			}

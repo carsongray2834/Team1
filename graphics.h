@@ -20,6 +20,9 @@ class ParticleGraphics {
 	void setColor(Color c) {
 		color = c;
 	}
+	void setColor(int r, int g, int b) {
+		color = {r, g, b};
+	}
 	Color getColor() {
 		return color;
 	}
