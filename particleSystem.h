@@ -46,7 +46,7 @@ public:
 				draw(temp->get_particle());
 			if ((temp->get_particle().get_type() == FIREWORK) && (temp->get_particle().get_life() == 0) && firework(temp->get_particle().get_x(), temp->get_particle().get_y())){}
 			}
-			if ((temp->get_particle().get_life() < 0) && (temp != particles.get_head())) {
+			if ((temp->get_particle().get_life() < 0)) {
 				Node* temp2 = temp->get_prev();
 				particles.delete_current(temp);
 				temp = temp2;
