@@ -46,7 +46,7 @@ int main(){
 		//I'll take this second one, Carson
 		cout << "7. Old Light			  PartcleSystem#3\n";
 		//This is mine, Lucas
-		cout << "8. {insert name for your particle scene here} PartcleSystem#4\n";
+		cout << "8. Randomly Leaky Faucet PartcleSystem#4\n";
 		//I claim this bottom one, Gurshan
 		cout << "9. Run particle tests\n";
 		cout << "10. Run node tests\n";
