@@ -1,8 +1,13 @@
-#include <iostream> //cout --> debug
-#include "particleSystem.h" // --> particleMovement
-#include <ctime> // --> framerate
-#include <cstdlib> // --> RNG 
+#include <iostream> //debug
+#include "particleSystem.h" // particleMovement, has litterally all of the #include
+#include <ctime> // framerate
+#include <cstdlib> // RNG 
 
-const color FaucetGrey = {100,100,100};
+const Color faucetGrey = {100,100,100};
+const Color waterBlue = {0,150,255};
 
-//hello
+void drawFaucet(){
+   
+}
+
+
