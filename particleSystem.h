@@ -32,7 +32,7 @@ public:
 	}
 	int numParticles() {return particles.get_size();}
 	void moveAndDraw() {
-		//clearscreen();
+		clearscreen();
 		Node* temp = particles.get_head();
 		while (temp != nullptr) {
 			if ((temp->get_particle().get_life() >= 0) && (temp->get_particle().get_x() >= 0) && (temp->get_particle().get_y() >= 0) && (temp->get_particle().get_x() <= columns) && (temp->get_particle().get_y() <= rows)){ 
