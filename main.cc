@@ -43,7 +43,8 @@ int main(){
 		//I claim 1, Jackson
 		cout << "6. Whirlpool Effect              PartcleSystem#2\n";
 		//I'll take this second one, Carson
-		cout << "7. {insert name for your particle scene here} PartcleSystem#3\n";
+		cout << "7. Old Light			  PartcleSystem#3\n";
+		//This is mine, Lucas
 		cout << "8. {insert name for your particle scene here} PartcleSystem#4\n";
 		//I claim this bottom one, Gurshan
 		cout << "9. Run particle tests\n";
