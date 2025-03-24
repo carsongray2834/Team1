@@ -74,7 +74,7 @@ int main(){
 			srand(time(0));
 			cout << "What particle location do you want? (type two, rows, cols)\n";
 			int x, y = 0;
-			cin >> x >> y;
+			cin >> y >> x;
 			cout << "Type x velcity and y velocity\n";
 			double dx, dy = 0.;
 			cin >> dx >> dy;
