@@ -109,7 +109,7 @@ int findMax(vector<int> v,bool x) {
 		o = 1;
 	}
 	int max = -1;
-	for (int i = o; i < v.size()-1; i+=2) {
+	for (size_t i = o; i < v.size()-1; i+=2) {
 		if (v.at(i) > max) max = v.at(i);
 	}
 	return max;
@@ -120,7 +120,7 @@ int findMin(vector<int> v,bool x) {
 		o = 1;
 	}
 	int min = 999;
-	for (int i = o; i < v.size()-1; i+=2) {
+	for (size_t i = o; i < v.size()-1; i+=2) {
 		if (v.at(i) < min) min = v.at(i);
 	}
 	return min;
@@ -139,7 +139,7 @@ void ParticleGraphics::drawPolygon(vector<int> v) {
 	vector<bool> boo;
 	v.push_back(v.at(0));
 	v.push_back(v.at(1));
-	for (int i = 2; i < v.size()-1; i+=2) {
+	for (unsigned int i = 2; i < v.size()-1; i+=2) {
 		drawLine(v.at(i),v.at(i+1),v.at(i-2),v.at(i-1));
 		bool bo = false;
 		int x1 = v.at(i-2);
@@ -160,7 +160,7 @@ void ParticleGraphics::drawPolygon(vector<int> v) {
 	for (int i = a; i <= c; i++) {
 		for (int j = d; j <= b; j++) {
 	  		bool sp = true;
-			for (int k = 2; k < v.size()-1; k+=2) {
+			for (unsigned int k = 2; k < v.size()-1; k+=2) {
 				if (!isIn(j,i,boo.at((k / 2) - 1), v.at(k-2), v.at(k-1), v.at(k), v.at(k+1))) {
 	  				sp = false;
 					//setColor({0,0,255});
