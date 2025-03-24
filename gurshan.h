@@ -10,6 +10,12 @@ const Color explosionRed = {240,60,60};
 const int rectWidth = 30;
 const int rectHeight = 45;
 
+particleSystem myMainParticleSystem;
+
+myMainParticleSystem.set_rows(75);
+myMainParticleSystem.set_columns(90);
+
+
 
 void drawFaucet(){
  // ParticleGraphics::drawRect(50,0,rectWidth,rectHeight); 
