@@ -10,7 +10,7 @@ const Color explosionRed = {240,60,60};
 const int rectWidth = 30;
 const int rectHeight = 45;
 
-particleSystem myMainParticleSystem;
+ParticleSystem myMainParticleSystem;
 
 myMainParticleSystem.set_rows(75);
 myMainParticleSystem.set_columns(90);
