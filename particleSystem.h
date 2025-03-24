@@ -67,6 +67,15 @@ public:
 	void drawRect(int x, int y, int w, int h) {
 		graphics.drawRect(x, y, w, h);
 	}
+	void drawLine(int x1, int y1, int x2, int y2) {
+		graphics.drawRect(x1,y1,x2,y2);
+	}
+	void drawOval(int x, int y, int w, int h) {
+		graphics.drawOval(x,y,w,h);
+	}
+	void drawPolygon(std::vector<int>& vec) {
+		graphics.drawPolygon(vec);
+	}
 
 	List returnParticlesList(){return particles;}
 

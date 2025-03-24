@@ -57,7 +57,10 @@ int main(){
 		if(!cin) die2("Choice must be a number!");
 		if(cin.eof()) die2("EOF");
 
-		if(choice == 0) break;
+		if(choice == 0) {
+			show_cursor(true);
+			break;
+		}
 		if(choice == 1) {
 			//RUN TESTS HERE:
 			graphicsTest();

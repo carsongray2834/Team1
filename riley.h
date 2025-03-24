@@ -1,6 +1,7 @@
 #include "particleSystem.h"
 #include <cstdlib>
 #include <ctime>
+#include <iostream>
 
 void scene3() {
     //we'll need:
@@ -12,7 +13,8 @@ void scene3() {
     //      then release one round of sparks
     //      then make lines and polygons
     //      then set the timer
-    srand(time(0));
+	std::srand(time(0));
+	clearscreen();
 	Color grey = Color{170,170,170};
 	Color spark = Color{230,230,0};
 	Color light = Color{179,179,0};
@@ -21,6 +23,7 @@ void scene3() {
 	auto [rows,cols] = get_terminal_size();
 	rows--;
 	cols--;
+	std::cout << rows << std::endl << cols << std::endl;
 	ParticleSystem ps(rows, cols);
 	show_cursor(false);
 	int a = static_cast<int>(cols * 0.2);
@@ -30,10 +33,22 @@ void scene3() {
 	int e = static_cast<int>(rows * 0.2);
 	int f = static_cast<int>(rows * 0.4);
 
-	vector<int> polyvec = {b,e,c,e,d,f,a,f};
+	std::cout << a << std::endl << b << std::endl << c << std::endl << d << std::endl << e << std::endl << f << std::endl;
 
+	ps.set_color(spark);
+	ps.drawRect(b,e,1,1);
+	ps.drawRect(c,e,1,1);
+	ps.drawRect(d,f,1,1);
+	ps.drawRect(a,f,1,1);
+
+	std::vector<int> polyvec = {b,e,c,e,d,f,a,f};
+
+	/*
 	for (int i = 0; i < 100; i++) {
-		ps.graphics.drawPolygon(polyvec);
-	}
+		clearscreen();
+		ps.set_color(grey);
+		ps.drawPolygon(polyvec);
+		usleep(100'000);
+	}*/
 }
 
