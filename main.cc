@@ -3,6 +3,7 @@
 #include "carson.h"
 #include "jackson.h"
 #include "riley.h"
+#include "gurshan.h"
 #include "particleSystem.h"
 #include </public/colors.h>
 using namespace std;
