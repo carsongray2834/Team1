@@ -57,7 +57,7 @@ void scene3() {
 		ps.moveAndDraw();
 		ps.set_color(grey);
 		ps.drawPolygon(polyvec);
-		ps.drawRect(g,1,3,e);
+		ps.drawRect(1,g,3,e);
 		usleep(100'000);
 	}
 }
