@@ -32,13 +32,14 @@ namespace Jackson {
 				pa.drawRect(15,0 , 10, rows - 10);
 				pa.set_color(cyan);
 				usleep(500'000);
-				pa.moveAndDraw();
+			//	pa.moveAndDraw();
 				if(temp->get_particle().get_y() <= 20) {
 					temp->get_particle().set_type(STREAMER);
 					temp->get_particle().set_ay(0.0);
 					temp->get_particle().set_dx(1.0);
 					temp->get_particle().set_dy(0.0);
 				}
+				pa.moveAndDraw();
 
 
 				 // v makes it lag lol, I was trying to get it to stop at 20 and flow like a river
