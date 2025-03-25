@@ -32,22 +32,21 @@ int main(){
 	auto [rows, cols] = get_terminal_size();
 	ParticleSystem part(rows-1,cols-1);
 	//cout << rows << " " << cols << endl;
-	show_cursor(true);
 	while(true) {
 
-		cout << "0. to break\n";
+		cout << "0. To break and show cursor\n";
 		cout << "1. Run all tests\n";
 		cout << "2. Add a particle to the particle system(list)\n";
 		cout << "3. Draw all partices in particle system(list)\n";
 		cout << "4. Run physics on added particles\n";
 		// make a run physics for one frame?
-		cout << "5. Waterfall Walloganza!!!!      PartcleSystem#1\n";
+		cout << "5. Waterfall Walloganza!\t\tPartcleSystem#1\n";
 		//I claim 1, Jackson
-		cout << "6. Whirlpool Effect              PartcleSystem#2\n";
+		cout << "6. Whirlpool Effect\t\tPartcleSystem#2\n";
 		//I'll take this second one, Carson
-		cout << "7. Old Light			 PartcleSystem#3\n";
+		cout << "7. Old Light\t\tPartcleSystem#3\n";
 		//This is mine, Lucas
-		cout << "8. Randomly Leaky Faucet         PartcleSystem#4\n";
+		cout << "8. Randomly Leaky Faucet\t\tPartcleSystem#4\n";
 		//I claim this bottom one, Gurshan
 		cout << "9. Run particle tests\n";
 		cout << "10. Run node tests\n";
@@ -101,21 +100,27 @@ int main(){
 				part.drawParticles();
 		}
 		else if(choice == 4) {
+			char ans;
+			cout << "Loop physics and draw?(Y or N)" << endl;
+			cin >> ans;
+			if(!cin || cin.eof()) die2("Type Y or N!");
+			
 			//runs physics for one frame, should it draw or nah?
-
-			part.moveParticles();
-
-			/*int FPS = 10;
-			//int dt = 1 / FPS;
-			//clearscreen();
-			show_cursor(false);
-			while(true) {
-				part.moveAndDraw();
-				usleep(1'000'000 / FPS); // 1 second / 10 = 10 fps
-				resetcolor();
-				
+			if(ans == 'N') {		
+				part.moveParticles();
 			}
-			show_cursor(true);*/
+			else {
+				int FPS = 10;
+				//int dt = 1 / FPS;
+				//clearscreen();
+				show_cursor(false);
+				while(true) {
+					part.moveAndDraw();
+					usleep(1'000'000 / FPS); // 1 second / 10 = 10 fps
+					resetcolor();
+				}
+				show_cursor(true);
+			}
 		}
 		else if(choice == 5) {
 			Jackson::addWater();

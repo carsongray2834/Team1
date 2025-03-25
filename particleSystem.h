@@ -37,7 +37,7 @@ public:
 		return particles.get_tail();
 	}
 	int numParticles() {return particles.get_size();}
-	void moveAndDraw() {
+	void moveAndDraw(); /*{
 		Node* temp = particles.get_head();
 		clearscreen();
 		while (temp != nullptr) {
@@ -54,7 +54,7 @@ public:
 			//temp->get_particle().move();
 			temp = temp->get_next();
 		}
-	}
+	} */
 	void draw(Particle& pa) {
 		//resetcolor();
 		//graphics.drawPoint(pa.get_oy(), pa.get_ox(), ' ');

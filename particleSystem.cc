@@ -10,7 +10,7 @@
 ParticleSystem mainParticleSystem;
 
 bool ParticleSystem::firework(int x, int y) {
-	srand(time(0));
+//	srand(time(0));
 	for (int i = 0; i < 50; i++) {
 		Particle p(Color{(rand() % 256), (rand() % 256), (rand() % 256)}, STREAMER, x, y, ((rand() % 6) - 3), ((rand() % 6) - 3), ((rand() % 8) + 2));
 		particles.insert_at_end(p);
@@ -24,6 +24,30 @@ void ParticleSystem::loadParticles(Node* firstParticle){
 		mainParticleSystem.add(currentParticle->get_particle()); //Add each particle to the particles list
 	}
 }
+
+void ParticleSystem::moveAndDraw() {		
+	Node* temp = particles.get_head();
+	clearscreen();
+	while (temp != nullptr) {
+		temp->get_particle().move();
+		if ((temp->get_particle().get_life() >= 0) && (temp->get_particle().get_x() >= 0) && (temp->get_particle().get_y() >= 0) && (temp->get_particle().get_x() <= columns) && (temp->get_particle().get_y() <= rows)){	
+			draw(temp->get_particle());
+			if ((temp->get_particle().get_type() == FIREWORK) && (temp->get_particle().get_life() == 0) && firework(temp->get_particle().get_x(), temp->get_particle().get_y())){}
+		}
+		if ((temp->get_particle().get_life() < 0)) {
+	//		Node* temp2 = temp->get_prev();
+			Node* temp2 = temp;
+			temp = temp->get_next();
+			particles.delete_current(temp2);
+	//		temp = temp2;
+		}
+			//temp->get_particle().move();
+		if(particles.get_size() > 0) {
+			temp = temp->get_next();
+		}
+	}
+}
+ 
 
 void ParticleSystem::drawParticles(){ 
 //	List listOfParticles = mainParticleSystem.returnParticlesList();
