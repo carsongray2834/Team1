@@ -96,7 +96,7 @@ void ParticleSystem::hunt() {
 	//set_color(Color{0,0,0});
 	while (temp != nullptr) {
 		//set_color(Color{0,0,0});
-		graphics.drawPoint(temp->get_particle().get_y(), temp->get_particle().get_x(),Color{0,0,0});
+		graphics.drawPoint(temp->get_particle().get_y(), temp->get_particle().get_x(),Color{1,1,1});
 		temp = temp->get_next();
 	}
 	set_color(c);

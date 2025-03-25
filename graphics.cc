@@ -26,6 +26,7 @@ void ParticleGraphics::drawPoint(int r, int c, char ch) {
 void ParticleGraphics::drawPoint(int r, int c, Color co) {
 	movecursor(r,c);
 	setbgcolor(co.r,co.g,co.b);
+	if (co.r == 1 && co.g == 1 && co.g == 1) resetcolor();
 	cout << " " << endl;
 	resetcolor();
 }
