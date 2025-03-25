@@ -37,24 +37,7 @@ public:
 		return particles.get_tail();
 	}
 	int numParticles() {return particles.get_size();}
-	void moveAndDraw(); /*{
-		Node* temp = particles.get_head();
-		clearscreen();
-		while (temp != nullptr) {
-			temp->get_particle().move();
-			if ((temp->get_particle().get_life() >= 0) && (temp->get_particle().get_x() >= 0) && (temp->get_particle().get_y() >= 0) && (temp->get_particle().get_x() <= columns) && (temp->get_particle().get_y() <= rows)){ 
-				draw(temp->get_particle());
-			if ((temp->get_particle().get_type() == FIREWORK) && (temp->get_particle().get_life() == 0) && firework(temp->get_particle().get_x(), temp->get_particle().get_y())){}
-			}
-			if ((temp->get_particle().get_life() < 0)) {
-				Node* temp2 = temp->get_prev();
-				particles.delete_current(temp);
-				temp = temp2;
-			}
-			//temp->get_particle().move();
-			temp = temp->get_next();
-		}
-	} */
+	void moveAndDraw(); 
 	void draw(Particle& pa) {
 		//resetcolor();
 		//graphics.drawPoint(pa.get_oy(), pa.get_ox(), ' ');
