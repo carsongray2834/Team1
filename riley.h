@@ -18,7 +18,7 @@ void scene3() {
 	auto [rows,cols] = get_terminal_size();
 	rows--;
 	cols--;
-	std::cout << rows << std::endl << cols << std::endl;
+	//std::cout << rows << std::endl << cols << std::endl;
 	ParticleSystem ps(rows, cols);
 	show_cursor(false);
 	int a = static_cast<int>(cols * 0.2);
@@ -50,14 +50,14 @@ void scene3() {
 		ps.hunt();
 		//ps.set_color(spark);
 		if (fbs <= 0) {
-			for (int j = 0; j < rand() % 15 + 5; j++) {
-				ps.add(Particle(spark, BALLISTIC, g, f, rand() % 7 - 3, -1 * (rand() % 2 + 1), (rand() % 6) + 3));
+			for (int j = 0; j < rand() % 15 + 15; j++) {
+				ps.add(Particle(spark, BALLISTIC, g + ((rand() % 30) - 15), f + 2, rand() % 13 - 6, -1 * (rand() % 2 + 1), (rand() % 6) + 3));
 			}
 			fbs = rand() % 20 + 5;
 		}
 		else {
 			fbs--;
-			ps.add(Particle(spark, BALLISTIC, g, f, rand() % 7 - 3, 0, (rand() % 6) + 3));
+			ps.add(Particle(spark, BALLISTIC, g + ((rand() % 30) - 15), f + 2, rand() % 13 - 6, 0, (rand() % 6) + 3));
 		}
 		ps.moveAndDraw();
 		/*ps.set_color(grey);
@@ -67,5 +67,7 @@ void scene3() {
 	}
 
 	show_cursor(true);
+	clearscreen();
+	movecursor(0,0);
 }
 
