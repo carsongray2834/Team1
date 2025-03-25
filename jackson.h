@@ -8,7 +8,7 @@ const Color light_gray = {200, 200, 200};
 namespace Jackson {
 		
 	auto [rows, cols] = get_terminal_size();
-	ParticleSystem pa(cols - 1, rows - 1); //Rows is y, columns is x
+	ParticleSystem pa(rows - 1, cols - 1); //Rows is y, columns is x
 
 	void addWater() {
 		for(int i = 0; i < 50; i++) { //make 30 waters lol
