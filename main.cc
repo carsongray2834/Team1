@@ -112,18 +112,19 @@ int main(){
 			else {
 				int FPS = 10;
 				//int dt = 1 / FPS;
-				//clearscreen();
+				clearscreen();
 				show_cursor(false);
 				while(true) {
 					part.moveAndDraw();
 					usleep(1'000'000 / FPS); // 1 second / 10 = 10 fps
-					resetcolor();
+					part.hunt();
 				}
 				show_cursor(true);
 			}
 		}
 		else if(choice == 5) {
 			Jackson::addWater();
+			int counter = 0;
 			while(true) {
 				Jackson::waterfall();
 			}

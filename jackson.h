@@ -20,11 +20,11 @@ namespace Jackson {
 		}
 	
 	}
-	void moveAndDraw() {
-		for(Node* temp = pa.get_head(); temp; temp = temp->get_next()) {
-			
+	void drawWater() {
+		for(int = 1; i >= 4; i++) {
+			Paricle p(cyan, STREAMER, 46 + i, 11, 1, 0, 10000); //4 particles at the bottom
+			pa.add(p);
 		}
-
 	}
 	void waterfall() {
 		clearscreen();
@@ -34,7 +34,7 @@ namespace Jackson {
 				pa.drawRect(15,0 , 10, rows - 10);
 				pa.set_color(cyan);	
 			//	pa.moveAndDraw();
-			if(temp->get_particle().get_y()) { //Need to figure out how to skip this if it's already set to the values below
+			if(temp->get_particle().get_y() > 30) { //Need to figure out how to skip this if it's already set to the values below
 					temp->get_particle().set_type(STREAMER);
 					temp->get_particle().set_ay(0.0);
 					temp->get_particle().set_dx(1.0);
