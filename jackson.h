@@ -1,3 +1,5 @@
+#ifndef JACKSON_H
+#define JACKSON_H
 #include "particleSystem.h"
 #include <ctime>
 #include <cstdlib>
@@ -45,7 +47,7 @@ namespace Jackson {
 
 				 // v makes it lag lol, I was trying to get it to stop at 20 and flow like a river
 				/*
-				if(temp->get_particle().get_x() >= cols + 100) {
+			f(temp->get_particle().get_x() >= cols + 100) {
 					temp->get_particle().set_type(STREAMER);
 					temp->get_particle().set_ay(0.0);
 					temp->get_particle().set_dx(1.0);
@@ -56,4 +58,4 @@ namespace Jackson {
 	}
 }
 	
-	
+#endif

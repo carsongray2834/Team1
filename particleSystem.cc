@@ -97,7 +97,7 @@ void ParticleSystem::hunt() {
 	while (temp != nullptr) {
 		//set_color(Color{0,0,0});
 		if (!(temp->get_particle().get_y() > rows) && !(temp->get_particle().get_x() > columns)) {
-			graphics.drawPoint(std::min(temp->get_particle().get_y(),rows), temp->get_particle().get_x(),Color{100,1,1});
+			graphics.drawPoint(std::min(temp->get_particle().get_y(),rows), temp->get_particle().get_x(),Color{1,1,1});
 		}
 		temp = temp->get_next();
 	}
