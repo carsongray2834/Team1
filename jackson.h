@@ -11,7 +11,7 @@ namespace Jackson {
 	ParticleSystem pa(cols - 1, rows - 1); //Rows is y, columns is x
 
 	void addWater() {
-		for(int i = 0; i < 100; i++) { //make 30 waters lol
+		for(int i = 0; i < 50; i++) { //make 30 waters lol
 			Particle p(cyan, BALLISTIC, 15, 11, rand() % 10 + rand() % 12 - rand() % 5, 0, 10000); //rand isn't really random after doing it 50 times																																			//the weird + and - rand stuff is my attempt at making it more random
 			p.set_ay(2 - rand() % 2); //set gravity to 0-2m/s (cause it's water)
 			pa.add(p);
