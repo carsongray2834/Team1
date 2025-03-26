@@ -33,6 +33,8 @@ void List::delete_current(Node* current) {
       else if (size == 1) {
           delete current;
 	      size--;
+		  head = nullptr;
+		  tail = nullptr;
       }
   
       else if(head == current) {

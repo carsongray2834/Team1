@@ -42,7 +42,7 @@ void ParticleSystem::moveAndDraw() {
 	//		temp = temp2;
 		}
 			//temp->get_particle().move();
-		if(particles.get_size() > 0) {
+		else if(particles.get_size() > 0) {
 			temp = temp->get_next();
 		}
 	}

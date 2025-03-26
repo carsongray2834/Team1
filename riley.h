@@ -57,7 +57,9 @@ void scene3() {
 		}
 		else {
 			fbs--;
-			ps.add(Particle(spark, BALLISTIC, g + ((rand() % 30) - 15), f + 2, rand() % 13 - 6, 0, (rand() % 6) + 3));
+			if (rand() % 3 == 0) {
+				ps.add(Particle(spark, BALLISTIC, g + ((rand() % 30) - 15), f + 2, rand() % 13 - 6, 0, (rand() % 6) + 3));
+			}
 		}
 		ps.moveAndDraw();
 		/*ps.set_color(grey);
