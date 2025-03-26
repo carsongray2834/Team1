@@ -7,21 +7,53 @@ const Color faucetGrey = {100,100,100};
 const Color waterBlue = {0,150,255};
 const Color explosionRed = {240,60,60};
 
-const int rectWidth = 30;
-const int rectHeight = 45;
-
-ParticleSystem myMainParticleSystem(75, 90);
-
-//myMainParticleSystem.set_rows(75);
-//myMainParticleSystem.set_columns(90);
+const int rectWidth = 60;
+const int rectHeight = 10;
+const int waterOffset = 1;
 
 
 
-void drawFaucet(){
- // ParticleGraphics::drawRect(50,0,rectWidth,rectHeight); 
+void drawFaucet(ParticleSystem particleSys){
+   particleSys.set_color(faucetGrey);
+   particleSys.drawRect(0,rectWidth,rectHeight,5);
+   
 }
 
-void startDripping(){
+void startDripping(ParticleSystem particleSys){
+ for(int i = 0; i < 50; i++){
+   
+  // particleSys.hunt();
+
+   Particle droplet = {waterBlue,STREAMER,30,rectHeight + waterOffset,0.1,0.8};
+
+    droplet.set_ay(2);
+
+   particleSys.add(droplet);
+
+   particleSys.moveAndDraw();
+
+   usleep(100'000'000/5);
+ }
+}
+
+void compileShenanigans(){
+
+	auto [rows, columns] = get_terminal_size();
+
+	ParticleSystem mainParticleSystem(rows,columns);
+
+	show_cursor(false);
+
+	clearscreen();
+
+	//columns = columns - 1;
+	//rows = rows - 1;
+
+	drawFaucet(mainParticleSystem);
+    startDripping(mainParticleSystem);
+
+	clearscreen();
+	show_cursor(true);
 
 }
 

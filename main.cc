@@ -137,7 +137,7 @@ int main(){
 			scene3();
 		}
 		else if(choice == 8) {
-
+          compileShenanigans();
 		}
 		else if(choice == 9) {
 			particleTest();
