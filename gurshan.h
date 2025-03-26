@@ -20,20 +20,8 @@ void drawFaucet(ParticleSystem particleSys){
 }
 
 void startDripping(ParticleSystem particleSys){
- for(int i = 0; i < 50; i++){
-   
-  // particleSys.hunt();
-
-   Particle droplet = {waterBlue,STREAMER,30,rectHeight + waterOffset,0.1,0.8};
-
-    droplet.set_ay(2);
-
-   particleSys.add(droplet);
-
-   particleSys.moveAndDraw();
-
-   usleep(100'000'000/5);
- }
+	std::cout << std::endl;
+	std::cout << "Insert dripping here" << std::endl;
 }
 
 void compileShenanigans(){
@@ -45,9 +33,6 @@ void compileShenanigans(){
 	show_cursor(false);
 
 	clearscreen();
-
-	//columns = columns - 1;
-	//rows = rows - 1;
 
 	drawFaucet(mainParticleSystem);
     startDripping(mainParticleSystem);
