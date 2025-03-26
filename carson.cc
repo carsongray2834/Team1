@@ -9,10 +9,6 @@ void carsoneffect() {
 	auto [rows, cols] = get_terminal_size();
 	rows--;
 	cols--;
-	movecursor(rows / 2, cols / 2);
-	setbgcolor(255, 0, 0);
-	std::cout << ' ' << std::flush;
-	sleep(3);
 	resetcolor();
 	cParticleSystem ps(rows, cols);
 	clearscreen();
@@ -135,8 +131,8 @@ void cParticleSystem::mapAccel(int x, int y, int mass) {
 			ay *= std::abs(accel * (dy / r));
 
 			accelMap[{j, i}] = {ax, ay};
-			auto [t1, t2] = accelMap[{j, i}];
-			std::cout << j << ',' << i << ' '<< t1 << ',' << t2 << std::endl;
+			//auto [t1, t2] = accelMap[{j, i}];
+			//std::cout << j << ',' << i << ' '<< t1 << ',' << t2 << std::endl;
 		}
 	}
 

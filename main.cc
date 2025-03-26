@@ -42,7 +42,7 @@ int main(){
 		// make a run physics for one frame?
 		cout << "5. Waterfall Walloganza!\t\tPartcleSystem#1\n";
 		//I claim 1, Jackson
-		cout << "6. Tornado Effect\t\tPartcleSystem#2\n";
+		cout << "6. Water Streams\t\tPartcleSystem#2\n";
 		//I'll take this second one, Carson
 		cout << "7. Old Light\t\tPartcleSystem#3\n";
 		//This is mine, Lucas
