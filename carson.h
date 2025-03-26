@@ -5,9 +5,10 @@
 
 template <typename T>
 struct cNode {
-	cNode* next = nullptr;
-	cNode* prev = nullptr;
+	cNode<T>* next = nullptr;
+	cNode<T>* prev = nullptr;
 	T data;
+	cNode(const T& d) : data(d) {}
 };
 
 template <typename T>
@@ -36,16 +37,17 @@ public:
 
 	//add node
 	void add(T d) {
-		if (!head) {
-			head = new cNode<T>;
+		if (size == 0) {
+			head = new cNode<T>(d);
 			head->data = d;
 			tail = head;
 		}
 		else {
-			cNode<T>* temp = new cNode<T>;
+			cNode<T>* temp = new cNode<T>(d);
 			temp->data = d;
 			temp->prev = tail;
 			tail->next = temp;
+			tail = tail->next;
 		}
 		size++;
 	}
@@ -67,35 +69,30 @@ public:
 			if (head) head->prev = nullptr;
 			size--;
 		}
+		else {
+			auto temp = curr;
+			curr->prev->next = curr->next;
+			curr->next->prev = curr->prev;
+			delete temp;
+			size--;
+		}
 	}
 };
 
-class static_mass {
-	int x;
-	int y;
-	int mass;
-	std::map<std::pair<int, int>, std::pair<double, double>> accelMap;
-public:
-	static_mass(int nx, int ny, int nmass);
-	int get_x() {return x;}
-	int get_y() {return y;}
-	int get_mass() {return mass;}
-	void map_accel(int rows, int cols);
-};
-
-class cParticle {
+struct cParticle {
 	double x;
+	double tx;
 	double y;
+	double ty;
 	double dx;
 	double dy;
 	double ax;
 	double ay;
 	char ch;
 	Color c;
-public:
 	cParticle(double nx = 0, double ny = 0, double ndx = 0, double ndy = 0, double nax = 0, double nay = 0, char nch = '*', Color nc = Color{0, 255, 0}) : x(nx), y(ny), dx(ndx), dy(ndy), ax(nax), ay(nay), ch(nch), c(nc) {}
 	void draw();
-	void hide(int w, int k);
+	void hide(int w = -1, int k = -1);
 	void move();
 	//hide move draw
 	void hmd();
@@ -106,12 +103,14 @@ class cParticleSystem {
 	int rows;
 	cList<cParticle> particles;
 public:
+	std::map<std::pair<int, int>, std::pair<double, double>> accelMap;
 	cParticleSystem(int nrows, int ncols) {
 		cols = ncols;
 		rows = nrows;
 	}
 	void add(cParticle p);
 	void moveAndDraw();
+	void mapAccel(int x, int y, int mass);
 };
 
 void carsoneffect();

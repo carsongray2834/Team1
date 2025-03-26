@@ -14,7 +14,7 @@ particle.o: particle.cc particle.h graphics.o
 	$(CXX) $(CXXFLAGS) -c particle.cc
 graphics.o: graphics.cc graphics.h
 	$(CXX) $(CXXFLAGS) -c graphics.cc
-carson.o: carson.h particleSystem.o carson.cc
+carson.o: carson.h carson.cc
 	$(CXX) $(CXXFLAGS) -c carson.cc
 clean:
 	rm a.out *.o
