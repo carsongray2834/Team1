@@ -20,7 +20,7 @@ I am doing the linked list class
 
     My idea is grass blowing in the wind or a waterfall and a flowing river
 
-I am doing the graphics class. (This is a test.)
+I am doing the graphics class.
   - Lucas Riley
     
     My idea is a light swinging and showering down sparks every so often.
