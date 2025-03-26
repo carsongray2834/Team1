@@ -36,6 +36,7 @@ public:
 	Node* get_tail() { 
 		return particles.get_tail();
 	}
+	void cMoveAndDraw();
 	int numParticles() {return particles.get_size();}
 	void moveAndDraw(); 
 	void draw(Particle& pa) {
