@@ -24,7 +24,13 @@ public:
 		size = 0;
 	}
 	~cList() {
-		while (size > 0) dlNode(head);
+		cNode<T>* temp = head;
+		while (temp != nullptr) {
+			cNode<T>* current = temp;
+			temp = temp->next;
+			delete current;
+		}
+		delete temp;
 	}
 
 
@@ -55,9 +61,11 @@ public:
 			tail = nullptr;
 		}
 		else if (curr == head) {
+			auto temp = head;
 			head = head->next;
-			delete head->prev;
-			head->prev = nullptr;
+			delete temp->prev;
+			if (head) head->prev = nullptr;
+			size--;
 		}
 	}
 };
@@ -104,9 +112,6 @@ public:
 	}
 	void add(cParticle p);
 	void moveAndDraw();
-	void freemem() {
-		particles.dlNode(particles.get_head());
-	}
 };
 
 void carsoneffect();

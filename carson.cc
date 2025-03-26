@@ -1,8 +1,7 @@
-#include "particleSystem.h"
 #include <stdlib.h>
 #include <time.h>
-#include <unordered_map>
 #include "carson.h"
+#include <cmath>
 
 void carsoneffect() {
 	//Prepares to render particles
@@ -19,8 +18,10 @@ void carsoneffect() {
 	ps.add(cParticle(2, 4, 1, 1));
 	//ps.add(cParticle(2, 5, 1, 1));
 	//ps.add(cParticle(2, 6, 1, 1));
-	ps.moveAndDraw();
-	ps.moveAndDraw();
+	for (int i = 0; i < 100; i++) {
+		ps.moveAndDraw();
+		usleep(100'000);
+	}
 
 	//Main loop for drawing particles
 	clearscreen();
@@ -50,7 +51,7 @@ void static_mass::map_accel(int rows, int cols) {
 //my classes methods definitions
 
 void cParticle::draw() {
-	movecursor(y, x);
+	movecursor(std::round(y), std::round(x));
 	setcolor(c.r, c.g, c.b);
 	if (ch == ' ') setbgcolor(c.r, c.g, c.b);
 	std::cout << ch;
@@ -59,9 +60,8 @@ void cParticle::draw() {
 
 void cParticle::hide(int w, int k) {
 	movecursor(w, k);
-	setbgcolor(1, 1, 1);
-	std::cout << ' ';
 	resetcolor();
+	std::cout << ' ';
 }
 
 void cParticle::move() {

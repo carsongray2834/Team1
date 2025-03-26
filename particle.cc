@@ -3,6 +3,7 @@
 #include <cstdlib>
 #include <ctime>
 
+//Constructor
 Particle::Particle (Color newC, Type newType, int newX, int newY, double newDx, double newDy, int newLife, char nshape){
 	c = newC;
 	type = newType;
@@ -19,10 +20,12 @@ Particle::Particle (Color newC, Type newType, int newX, int newY, double newDx, 
 	//oldy = 0;
 	if ((type == BALLISTIC) || (type == FIREWORK)) ay = .981;
 }
+//getters and setters
 Color Particle::get_color() {return c;}
 void Particle::set_color(Color newC) {c = newC;}
 int Particle::get_x(){return std::round(x);}
 int Particle::get_y(){return std::round(y);}
+//x and y cannot be negative
 void Particle::set_x(int nX) {
 	if (nX < 0) nX = 0;
 	x = nX;
@@ -48,20 +51,13 @@ void Particle::set_ax(double n) {ax = n;}
 void Particle::set_ay(double n) {ay = n;}
 double Particle::get_ax() {return ax;}
 double Particle::get_ay() {return ay;}
-//int Particle::get_ox() {return ox;}
-//int Particle::get_oy() {return oy;}
-//NOTE: Move function takes a particleSystem by reference in order to do the FIREWORK effect
+//move function applies velocity and accel
 void Particle::move(int deltaT) {
 	const int dt = deltaT; //amount of "frames" since last move() call
 	//could be used to change the time scale
 	dx += std::round(ax * dt);
 	dy += std::round(ay * dt);
-	//oldx = 0;
-	//oldy = 0;
 	x += std::round(dx * dt);
 	y += std::round(dy * dt);
-	//std::cout << std::round(dy * dt);
 	life--;
-	//had to implement fireworks in particleSystem since
-	//i would need to add new particles
 }
