@@ -124,8 +124,7 @@ int main(){
 		}
 		else if(choice == 5) {
 			Jackson::addWater();
-			Jackson::addRiver(); 
-			int counter = 0;
+			Jackson::addRiver(); 	
 			while(true) {
 				Jackson::waterfall();
 			}
