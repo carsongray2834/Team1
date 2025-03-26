@@ -48,8 +48,8 @@ public:
 		if (size == 0) return;
 		else if (curr == nullptr) return;
 		else if (size == 1) {
-			cNode<T>* temp = current;
-			delete current;
+			cNode<T>* temp = curr;
+			delete curr;
 			size--;
 			head = nullptr;
 			tail = nullptr;
