@@ -21,8 +21,8 @@ namespace Jackson {
 	
 	}
 	void drawWater() {
-		for(int = 1; i >= 4; i++) {
-			Paricle p(cyan, STREAMER, 46 + i, 11, 1, 0, 10000); //4 particles at the bottom
+		for(int i = 1; i >= 4; i++) {
+			Particle p(cyan, STREAMER, 46 + i, 11, 1, 0, 10000); //4 particles at the bottom
 			pa.add(p);
 		}
 	}
